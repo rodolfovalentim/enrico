@@ -1,6 +1,7 @@
 package animakai;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 import enrico.Episode;
+import enrico.Quality;
+import fansubs.FansubAnimePage;
 import linkapi.PreparedLink;
 
-public class AnimaKaiEpisodeListPage {
+public class AnimaKaiEpisodeListPage extends FansubAnimePage {
 	private String preparedLink = "http://www.animakai.tv/anime/*/";
 	
 	private ArrayList<Episode> episodesHD = new ArrayList<Episode>();
@@ -61,4 +64,23 @@ public class AnimaKaiEpisodeListPage {
 				return null;
 		}
 	}
+
+	@Override
+	public Episode getLastEpisode(Quality quality) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Episode> getAllEpisodes(Quality quality) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Episode getEpisode(int number, Quality quality) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
