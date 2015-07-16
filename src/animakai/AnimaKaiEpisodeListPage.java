@@ -7,8 +7,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import enrico.Episode;
+import enrico.Mirror;
 import enrico.Quality;
 import fansubs.FansubAnimePage;
 import linkapi.PreparedLink;
@@ -22,8 +25,7 @@ public class AnimaKaiEpisodeListPage extends FansubAnimePage {
 			return q.toString();
 	}
 	
-	private static void getByIndividualEpisode (List<Episode> episodes,Quality quality, WebDriver driver){
-		
+	private static void clickToShowLinks (WebDriver driver, Quality quality){
 		driver.findElement(By.id("serie_pg_tabs_item_2")).click();
 		
 		for (WebElement e : driver.findElements(By.className("epBt1"))){
@@ -35,6 +37,11 @@ public class AnimaKaiEpisodeListPage extends FansubAnimePage {
 			if(elem.getText().equals(renameQuality(quality)))
 				elem.click();
 		}
+	}
+	
+	private static void getByIndividualEpisode (List<Episode> episodes,Quality quality, WebDriver driver){
+		
+		clickToShowLinks(driver, quality);
 		
 		for (WebElement e : driver.findElements(By.cssSelector(".tc_content_item,.tc_title"))){
 
@@ -51,6 +58,64 @@ public class AnimaKaiEpisodeListPage extends FansubAnimePage {
 		}
 	}
 	
+	private static Episode getLastEpisode (WebDriver driver, Quality quality){
+		clickToShowLinks(driver, quality);
+		Episode episode = null;
+		for (WebElement e : driver.findElements(By.cssSelector(".tc_content_item,.tc_title"))){
+
+			try {
+				String href = e.findElement(By.tagName("a")).getAttribute("href");
+				String text = e.findElement(By.tagName("a")).getText();
+				if (!text.isEmpty() && href.split("/").length > 1 && episode!=null)
+					episode.addMirror(text,href);
+				}catch(org.openqa.selenium.NoSuchElementException exc){
+				String str = e.getText().replaceAll("[^0123456789]", "");
+				if (!str.isEmpty())
+					 episode=new Episode("",Integer.valueOf(str));
+			}
+		}
+		return episode;
+	}
+	
+	private static Episode getSpecificEpisode (WebDriver driver, Quality quality, int number){
+		clickToShowLinks(driver, quality);
+		Episode episode = null;
+		for (WebElement e : driver.findElements(By.cssSelector(".tc_content_item,.tc_title"))){
+
+			try {
+				String href = e.findElement(By.tagName("a")).getAttribute("href");
+				String text = e.findElement(By.tagName("a")).getText();
+				if (!text.isEmpty() && href.split("/").length > 1 && episode!=null )
+					episode.addMirror(text,href);
+				}catch(org.openqa.selenium.NoSuchElementException exc){
+				String str = e.getText().replaceAll("[^0123456789]", "");
+				if (!str.isEmpty()){
+					if (episode != null)
+						break;
+					if (Integer.valueOf(str).equals(number))
+						episode = new Episode("",Integer.valueOf(str));
+				}
+			}
+		}
+		return episode;
+	}
+	
+	private static String protectedBy (String link,WebDriver driver){
+		driver.get(link);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("link")));
+
+		return (driver.findElement(By.id("link")).findElement(By.tagName("div")).getText());
+	}
+	
+	private static void removeProtectionLinks(Episode episode, WebDriver driver){
+		for (Mirror m : episode.getMirrors()){
+			if (m.getLink().split("/")[2].equals("www.animakai.tv")||m.getLink().split("/")[2].equals("www.otakai.com.br"))
+				m.setLink(protectedBy(m.getLink(),driver));
+		}
+	}
+	
 	public AnimaKaiEpisodeListPage (int id){
 		preparedLink = "http://www.animakai.tv/anime/*/";
 		PreparedLink url = new PreparedLink(preparedLink);
@@ -60,7 +125,12 @@ public class AnimaKaiEpisodeListPage extends FansubAnimePage {
 
 	@Override
 	public Episode getLastEpisode(Quality quality) {
-		return null;
+		WebDriver driver = new  PhantomJSDriver();
+		driver.get(preparedLink);
+		Episode ep = getLastEpisode(driver, quality);
+		removeProtectionLinks(ep, driver);
+		driver.close(); 
+		return ep;
 	}
 
 	@Override
@@ -69,15 +139,20 @@ public class AnimaKaiEpisodeListPage extends FansubAnimePage {
 		WebDriver driver = new  PhantomJSDriver();
 		driver.get(preparedLink);	
 		getByIndividualEpisode(episodes, quality, driver);
-		
+		for(Episode e : episodes)
+			removeProtectionLinks(e, driver);
 		driver.close();
 		return episodes;
 	}
 
 	@Override
 	public Episode getEpisode(int number, Quality quality) {
-		// TODO Auto-generated method stub
-		return null;
+		WebDriver driver = new  PhantomJSDriver();
+		driver.get(preparedLink);
+		Episode ep = getSpecificEpisode(driver, quality, number);
+		removeProtectionLinks(ep, driver);
+		driver.close(); 
+		return ep;		
 	}
 
 }

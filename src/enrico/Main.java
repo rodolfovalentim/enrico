@@ -9,15 +9,11 @@ import fansubs.FansubAnimePage;
 
 public class Main {
 
-	void file4GoDownload(WebDriver driver, String link) {
-
-	}
-
 	public static void main(String[] args) throws InterruptedException,
 			IOException {
 
-		FansubAnimePage rokkaAnik = new AnimaKaiEpisodeListPage(8);
-		System.out.println(rokkaAnik.getAllEpisodes(Quality.FullHD));
+		FansubAnimePage rokkaAnik = new AnimaKaiEpisodeListPage(1888);
+		System.out.println(rokkaAnik.getAllEpisodes(Quality.MP4));
 		// PunchSubEpisodeListPage teste = new PunchSubEpisodeListPage(567);
 
 		/*
