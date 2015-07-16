@@ -14,67 +14,64 @@ import fansubs.FansubAnimePage;
 import linkapi.PreparedLink;
 
 public class AnimaKaiEpisodeListPage extends FansubAnimePage {
-	private String preparedLink = "http://www.animakai.tv/anime/*/";
 	
-	private ArrayList<Episode> episodesHD = new ArrayList<Episode>();
-	private ArrayList<Episode> episodesFullHD = new ArrayList<Episode>();
-	private ArrayList<Episode> episodesSD = new ArrayList<Episode>();
-	private ArrayList<Episode> episodesMP4 = new ArrayList<Episode>();
-	
-	private void findEpisodes(){
-		WebDriver driver = new  PhantomJSDriver();
-		driver.get(preparedLink);
-		
-		//System.out.println(driver.getPageSource());
-		
-		for (WebElement e : driver.findElements(By.className("epBt1"))){
-			System.out.println(e.findElement(By.tagName("a")).getText()+" - "+e.findElement(By.tagName("a")).getAttribute("href"));
-			e.findElement(By.tagName("a")).click();
-		}
-		for (WebElement e : driver.findElements(By.className("tc_content_item"))){
-			WebElement elem = e.findElement(By.tagName("a"));
-			if(elem.getText().equals("MP4"))
-				elem.click();
-		}
-		for (WebElement e : driver.findElements(By.className("tc_content_item"))){
-			System.out.println(e.findElement(By.tagName("a")).getText());
-		}
-		
-		driver.close();
+	private static String renameQuality (Quality q){
+		if(q.equals(Quality.FullHD))
+			return "1080p";
+		else
+			return q.toString();
 	}
 	
-	public AnimaKaiEpisodeListPage (int id, String quality){
+	private static void getByIndividualEpisode (List<Episode> episodes,Quality quality, WebDriver driver){
+		
+		driver.findElement(By.id("serie_pg_tabs_item_2")).click();
+		
+		for (WebElement e : driver.findElements(By.className("epBt1"))){
+			e.findElement(By.tagName("a")).click();
+		}
+		
+		for (WebElement e : driver.findElements(By.className("tc_content_item"))){
+			WebElement elem = e.findElement(By.tagName("a"));
+			if(elem.getText().equals(renameQuality(quality)))
+				elem.click();
+		}
+		
+		for (WebElement e : driver.findElements(By.cssSelector(".tc_content_item,.tc_title"))){
+
+			try {
+				String href = e.findElement(By.tagName("a")).getAttribute("href");
+				String text = e.findElement(By.tagName("a")).getText();
+				if (!text.isEmpty() && href.split("/").length > 1 && episodes.size()>0)
+					episodes.get(episodes.size()-1).addMirror(text,href);
+				}catch(org.openqa.selenium.NoSuchElementException exc){
+				String str = e.getText().replaceAll("[^0123456789]", "");
+				if (!str.isEmpty())
+					 episodes.add(new Episode("",Integer.valueOf(str)));
+			}
+		}
+	}
+	
+	public AnimaKaiEpisodeListPage (int id){
+		preparedLink = "http://www.animakai.tv/anime/*/";
 		PreparedLink url = new PreparedLink(preparedLink);
 		url.set(0, Integer.toString(id));
 		preparedLink = url.toString();
-		findEpisodes();
-	}
-	
-	public ArrayList<Episode> getEpisodes (String quality){
-		switch (quality){
-			case "HD": 
-				return episodesHD;
-			case "FullHD": 
-				return episodesFullHD;
-			case "SD": 
-				return episodesSD;
-			case "MP4": 
-				return episodesMP4;
-			default:
-				return null;
-		}
 	}
 
 	@Override
 	public Episode getLastEpisode(Quality quality) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Episode> getAllEpisodes(Quality quality) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Episode> episodes = new ArrayList<Episode>();
+		WebDriver driver = new  PhantomJSDriver();
+		driver.get(preparedLink);	
+		getByIndividualEpisode(episodes, quality, driver);
+		
+		driver.close();
+		return episodes;
 	}
 
 	@Override

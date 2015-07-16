@@ -3667,3 +3667,258 @@ e7c3450-2a1f-11e5-92da-81422e8ae8db] - CONSTRUCTOR - Negotiated Capabilities: {"
 [INFO  - 2015-07-14T16:12:25.193Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 nchronous Sessions clean-up phase starting NOW
 [INFO  - 2015-07-14T14:29:28.371Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '097d70f0-2a34-11e5-9460-53ea94dc8668', because windowless
+[INFO  - 2015-07-15T19:48:55.154Z] GhostDriver - Main - running on port 25543
+[INFO  - 2015-07-15T19:48:55.835Z] Session [87017a70-2b2a-11e5-9c23-0987c8f6555f] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T19:48:55.835Z] Session [87017a70-2b2a-11e5-9c23-0987c8f6555f] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T19:48:55.835Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 87017a70-2b2a-11e5-9c23-0987c8f6555f
+[INFO  - 2015-07-15T19:53:55.156Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T19:53:55.156Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '87017a70-2b2a-11e5-9c23-0987c8f6555f', because windowless
+ec0f0c0-2b2a-11e5-a87b-0f4c658f372d] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T19:50:56.208Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: cec0f0c0-2b2a-11e5-a87b-0f4c658f372d
+[INFO  - 2015-07-15T19:55:56.073Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T19:55:56.073Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session 'cec0f0c0-2b2a-11e5-a87b-0f4c658f372d', because windowless
+e469ed0-2b2a-11e5-8313-933291f0a84c] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T19:52:15.936Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: fe469ed0-2b2a-11e5-8313-933291f0a84c
+[INFO  - 2015-07-15T19:57:15.764Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T19:57:15.764Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session 'fe469ed0-2b2a-11e5-8313-933291f0a84c', because windowless
+129080-2b2b-11e5-bdce-c7dc9ab92187] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T19:52:50.828Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 13129080-2b2b-11e5-bdce-c7dc9ab92187
+[INFO  - 2015-07-15T19:57:50.149Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:02:50.149Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:07:50.149Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:12:50.149Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:17:50.149Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:22:50.149Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:27:50.149Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:32:50.149Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:37:50.149Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:42:50.150Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:47:50.150Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:52:50.150Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:57:50.150Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T21:02:50.150Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+110-2b2b-11e5-9a2c-a9d0356db177
+[INFO  - 2015-07-15T20:00:27.667Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:05:27.667Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:10:27.667Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:15:27.667Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:20:27.668Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:25:27.668Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:30:27.668Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:35:27.668Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:40:27.668Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:45:27.668Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:50:27.668Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:55:27.668Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T21:00:27.668Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+se starting NOW
+[INFO  - 2015-07-15T20:31:48.276Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:36:48.276Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:41:48.277Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:46:48.276Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:51:48.276Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:56:48.277Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T21:01:48.277Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+xy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:01:33.629Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 4aafd1a0-2b2c-11e5-9f7c-1fdc44df333e
+[INFO  - 2015-07-15T20:06:32.956Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:11:32.957Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:16:32.957Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:21:32.957Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:26:32.957Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:31:32.957Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:36:32.957Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:41:32.957Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:46:32.957Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:51:32.958Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:56:32.958Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T21:01:32.959Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+se starting NOW
+[INFO  - 2015-07-15T20:32:32.842Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:37:32.842Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:42:32.843Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:47:32.843Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:52:32.843Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:57:32.843Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T21:02:32.843Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+se starting NOW
+[INFO  - 2015-07-15T20:33:04.020Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:38:04.020Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:43:04.020Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:48:04.021Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:53:04.021Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:58:04.021Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+e starting NOW
+[INFO  - 2015-07-15T20:28:43.566Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:33:43.566Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:38:43.566Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:43:43.567Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:48:43.567Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:53:43.568Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:58:43.568Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+creenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:07:38.377Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 2417cb50-2b2d-11e5-91c7-3134780d7851
+[INFO  - 2015-07-15T20:12:37.720Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:12:37.720Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '2417cb50-2b2d-11e5-91c7-3134780d7851', because windowless
+f242640-2b2d-11e5-8a8b-637103f3d634] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:08:50.600Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 4f242640-2b2d-11e5-8a8b-637103f3d634
+[INFO  - 2015-07-15T20:13:49.943Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:13:49.943Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '4f242640-2b2d-11e5-8a8b-637103f3d634', because windowless
+[INFO  - 2015-07-15T20:27:28.655Z] GhostDriver - Main - running on port 43907
+[INFO  - 2015-07-15T20:27:28.793Z] Session [e9a30360-2b2f-11e5-856b-fdaa57eaaf3d] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T20:27:28.793Z] Session [e9a30360-2b2f-11e5-856b-fdaa57eaaf3d] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:27:28.794Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: e9a30360-2b2f-11e5-856b-fdaa57eaaf3d
+[INFO  - 2015-07-15T20:32:28.653Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:37:28.653Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:42:28.653Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:47:28.653Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:52:28.653Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:57:28.654Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T21:02:28.654Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+1f-41c758d9df02
+[INFO  - 2015-07-15T20:34:06.265Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:34:06.265Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '24200150-2b30-11e5-8c1f-41c758d9df02', because windowless
+19e94c0-2b30-11e5-a470-4b539640a723] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:30:23.247Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 519e94c0-2b30-11e5-a470-4b539640a723
+[INFO  - 2015-07-15T20:35:22.589Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:35:22.590Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '519e94c0-2b30-11e5-a470-4b539640a723', because windowless
+5265860-2b30-11e5-8d66-75f4ff562c9f] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:31:22.857Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 75265860-2b30-11e5-8d66-75f4ff562c9f
+[INFO  - 2015-07-15T20:36:22.187Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:36:22.188Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '75265860-2b30-11e5-8d66-75f4ff562c9f', because windowless
+[INFO  - 2015-07-15T20:41:52.018Z] GhostDriver - Main - running on port 1572
+[INFO  - 2015-07-15T20:41:52.662Z] Session [ec8acf20-2b31-11e5-9941-0b92ec31492a] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T20:41:52.662Z] Session [ec8acf20-2b31-11e5-9941-0b92ec31492a] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:41:52.662Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: ec8acf20-2b31-11e5-9941-0b92ec31492a
+[INFO  - 2015-07-15T20:46:52.018Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:46:52.018Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session 'ec8acf20-2b31-11e5-9941-0b92ec31492a', because windowless
+3e03c90-2b32-11e5-bd18-55b64ed8eba1] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:42:58.652Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 13e03c90-2b32-11e5-bd18-55b64ed8eba1
+[INFO  - 2015-07-15T20:47:58.044Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:47:58.044Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '13e03c90-2b32-11e5-bd18-55b64ed8eba1', because windowless
+6db0980-2b32-11e5-b823-61b0bb77c175] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:47:05.249Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: a6db0980-2b32-11e5-b823-61b0bb77c175
+[INFO  - 2015-07-15T20:52:04.547Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:52:04.547Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session 'a6db0980-2b32-11e5-b823-61b0bb77c175', because windowless
+d5c2540-2b32-11e5-8ce7-83d4581ff40e] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:47:43.000Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: bd5c2540-2b32-11e5-8ce7-83d4581ff40e
+[INFO  - 2015-07-15T20:52:42.363Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:57:42.363Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T21:02:42.363Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:48:08.229Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: cc65a200-2b32-11e5-94c3-c55a16b43377
+[INFO  - 2015-07-15T20:53:07.582Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T20:58:07.582Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+e5-988e-d3dff52b7c36] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T20:53:52.779Z] Session [99c3f170-2b33-11e5-988e-d3dff52b7c36] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:53:52.779Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 99c3f170-2b33-11e5-988e-d3dff52b7c36
+[INFO  - 2015-07-15T20:58:52.144Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+e5-984a-b59af4d27561] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T20:57:16.918Z] Session [13711520-2b34-11e5-984a-b59af4d27561] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:57:16.918Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 13711520-2b34-11e5-984a-b59af4d27561
+[INFO  - 2015-07-15T21:02:16.286Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+e5-916a-f188d4d86eb8] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T20:58:03.802Z] Session [2f630360-2b34-11e5-916a-f188d4d86eb8] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:58:03.802Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 2f630360-2b34-11e5-916a-f188d4d86eb8
+[INFO  - 2015-07-15T20:59:49.995Z] GhostDriver - Main - running on port 36969
+[INFO  - 2015-07-15T20:59:50.628Z] Session [6f0f5e00-2b34-11e5-81f2-25f8071cbf78] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T20:59:50.628Z] Session [6f0f5e00-2b34-11e5-81f2-25f8071cbf78] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T20:59:50.629Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 6f0f5e00-2b34-11e5-81f2-25f8071cbf78
+[INFO  - 2015-07-15T21:00:35.086Z] GhostDriver - Main - running on port 15636
+[INFO  - 2015-07-15T21:00:35.705Z] Session [89ed4430-2b34-11e5-b186-ef9876266fc4] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T21:00:35.705Z] Session [89ed4430-2b34-11e5-b186-ef9876266fc4] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T21:00:35.705Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 89ed4430-2b34-11e5-b186-ef9876266fc4
+[INFO  - 2015-07-15T21:01:20.214Z] GhostDriver - Main - running on port 23009
+[INFO  - 2015-07-15T21:01:20.856Z] Session [a4d71140-2b34-11e5-90fb-b10956a6a82a] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T21:01:20.857Z] Session [a4d71140-2b34-11e5-90fb-b10956a6a82a] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T21:01:20.857Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: a4d71140-2b34-11e5-90fb-b10956a6a82a
+[INFO  - 2015-07-15T21:01:54.678Z] GhostDriver - Main - running on port 42369
+[INFO  - 2015-07-15T21:01:55.281Z] Session [b95be7d0-2b34-11e5-8eff-492957f5cce2] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T21:01:55.281Z] Session [b95be7d0-2b34-11e5-8eff-492957f5cce2] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T21:01:55.281Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: b95be7d0-2b34-11e5-8eff-492957f5cce2
+[INFO  - 2015-07-15T21:03:44.151Z] GhostDriver - Main - running on port 14657
+[INFO  - 2015-07-15T21:03:44.771Z] Session [fa9ee800-2b34-11e5-8236-8b4649966123] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T21:03:44.771Z] Session [fa9ee800-2b34-11e5-8236-8b4649966123] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T21:03:44.771Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: fa9ee800-2b34-11e5-8236-8b4649966123
+[INFO  - 2015-07-15T21:05:58.204Z] GhostDriver - Main - running on port 30932
+[INFO  - 2015-07-15T21:05:58.883Z] Session [4a8ec600-2b35-11e5-b4b9-75f359803b51] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T21:05:58.883Z] Session [4a8ec600-2b35-11e5-b4b9-75f359803b51] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T21:05:58.883Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 4a8ec600-2b35-11e5-b4b9-75f359803b51
+[INFO  - 2015-07-15T21:07:03.460Z] GhostDriver - Main - running on port 38614
+[INFO  - 2015-07-15T21:07:03.642Z] Session [71283670-2b35-11e5-b6ec-7d1bc09d6ab6] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T21:07:03.642Z] Session [71283670-2b35-11e5-b6ec-7d1bc09d6ab6] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T21:07:03.642Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 71283670-2b35-11e5-b6ec-7d1bc09d6ab6
+[INFO  - 2015-07-15T21:07:22.843Z] GhostDriver - Main - running on port 9786
+[INFO  - 2015-07-15T21:07:23.511Z] Session [7cfffb40-2b35-11e5-85c4-0b092f58cb2b] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T21:07:23.511Z] Session [7cfffb40-2b35-11e5-85c4-0b092f58cb2b] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T21:07:23.511Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 7cfffb40-2b35-11e5-85c4-0b092f58cb2b
+[INFO  - 2015-07-15T21:07:40.032Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2015-07-15T21:08:12.059Z] GhostDriver - Main - running on port 45257
+[INFO  - 2015-07-15T21:08:12.789Z] Session [9a5f3520-2b35-11e5-856e-fbe906dc2277] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T21:08:12.789Z] Session [9a5f3520-2b35-11e5-856e-fbe906dc2277] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T21:08:12.789Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 9a5f3520-2b35-11e5-856e-fbe906dc2277
+[INFO  - 2015-07-15T21:08:26.044Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2015-07-15T23:44:25.302Z] GhostDriver - Main - running on port 8036
+[INFO  - 2015-07-15T23:44:25.981Z] Session [6d3aa690-2b4b-11e5-896a-8f443e4288a2] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T23:44:25.981Z] Session [6d3aa690-2b4b-11e5-896a-8f443e4288a2] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T23:44:25.981Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 6d3aa690-2b4b-11e5-896a-8f443e4288a2
+[INFO  - 2015-07-15T23:47:04.880Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2015-07-15T23:49:38.248Z] GhostDriver - Main - running on port 10170
+[INFO  - 2015-07-15T23:49:38.929Z] Session [27c2b9d0-2b4c-11e5-8d6d-4767634a5ce9] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T23:49:38.929Z] Session [27c2b9d0-2b4c-11e5-8d6d-4767634a5ce9] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T23:49:38.929Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 27c2b9d0-2b4c-11e5-8d6d-4767634a5ce9
+[INFO  - 2015-07-15T23:50:07.624Z] GhostDriver - Main - running on port 32329
+[INFO  - 2015-07-15T23:50:08.311Z] Session [39463740-2b4c-11e5-affc-bd618722cecc] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T23:50:08.311Z] Session [39463740-2b4c-11e5-affc-bd618722cecc] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T23:50:08.311Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 39463740-2b4c-11e5-affc-bd618722cecc
+[INFO  - 2015-07-15T23:50:20.975Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2015-07-15T23:50:40.520Z] GhostDriver - Main - running on port 24356
+[INFO  - 2015-07-15T23:50:41.212Z] Session [4ce25b80-2b4c-11e5-8472-f512bfeedc46] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T23:50:41.212Z] Session [4ce25b80-2b4c-11e5-8472-f512bfeedc46] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T23:50:41.212Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 4ce25b80-2b4c-11e5-8472-f512bfeedc46
+[INFO  - 2015-07-15T23:50:54.099Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2015-07-15T23:51:54.396Z] GhostDriver - Main - running on port 18554
+[INFO  - 2015-07-15T23:51:54.587Z] Session [789ea580-2b4c-11e5-bce5-b731c291c563] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T23:51:54.587Z] Session [789ea580-2b4c-11e5-bce5-b731c291c563] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T23:51:54.587Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 789ea580-2b4c-11e5-bce5-b731c291c563
+[INFO  - 2015-07-15T23:52:41.722Z] GhostDriver - Main - running on port 3887
+[INFO  - 2015-07-15T23:52:42.408Z] Session [951f8d50-2b4c-11e5-9f74-b9768bd5128d] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T23:52:42.408Z] Session [951f8d50-2b4c-11e5-9f74-b9768bd5128d] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T23:52:42.408Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 951f8d50-2b4c-11e5-9f74-b9768bd5128d
+[INFO  - 2015-07-15T23:52:54.769Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2015-07-15T23:53:24.400Z] GhostDriver - Main - running on port 19438
+[INFO  - 2015-07-15T23:53:25.099Z] Session [ae91ae80-2b4c-11e5-8c43-276d296e68be] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T23:53:25.099Z] Session [ae91ae80-2b4c-11e5-8c43-276d296e68be] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T23:53:25.100Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: ae91ae80-2b4c-11e5-8c43-276d296e68be
+[INFO  - 2015-07-15T23:58:24.401Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T23:58:24.402Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session 'ae91ae80-2b4c-11e5-8c43-276d296e68be', because windowless
+8df3b90-2b4c-11e5-839a-f32279c259fb] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T23:54:09.229Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: c8df3b90-2b4c-11e5-839a-f32279c259fb
+[INFO  - 2015-07-15T23:59:09.048Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-15T23:59:09.048Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session 'c8df3b90-2b4c-11e5-839a-f32279c259fb', because windowless
+c910ab0-2b4c-11e5-952a-1b5a7f7652ee] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T23:54:42.270Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: dc910ab0-2b4c-11e5-952a-1b5a7f7652ee
+[INFO  - 2015-07-15T23:59:40.010Z] GhostDriver - Main - running on port 9158
+[INFO  - 2015-07-15T23:59:40.687Z] Session [8e6fdcc0-2b4d-11e5-a9ba-b1b1cd696c6f] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-15T23:59:40.687Z] Session [8e6fdcc0-2b4d-11e5-a9ba-b1b1cd696c6f] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-15T23:59:40.687Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 8e6fdcc0-2b4d-11e5-a9ba-b1b1cd696c6f
+[INFO  - 2015-07-16T00:03:32.643Z] GhostDriver - Main - running on port 37241
+[INFO  - 2015-07-16T00:03:33.315Z] Session [1917ecf0-2b4e-11e5-985a-9f74ba56f256] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-16T00:03:33.315Z] Session [1917ecf0-2b4e-11e5-985a-9f74ba56f256] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-16T00:03:33.315Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 1917ecf0-2b4e-11e5-985a-9f74ba56f256
+[INFO  - 2015-07-16T00:06:16.494Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2015-07-16T00:08:27.506Z] GhostDriver - Main - running on port 21124
+[INFO  - 2015-07-16T00:08:28.179Z] Session [c8d899f0-2b4e-11e5-a014-db37c1b91e5b] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-16T00:08:28.179Z] Session [c8d899f0-2b4e-11e5-a014-db37c1b91e5b] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-16T00:08:28.179Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: c8d899f0-2b4e-11e5-a014-db37c1b91e5b
+[INFO  - 2015-07-16T00:11:05.290Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2015-07-16T00:12:19.688Z] GhostDriver - Main - running on port 36702
+[INFO  - 2015-07-16T00:12:20.350Z] Session [533b15a0-2b4f-11e5-83c5-f9b83e05112e] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
+[INFO  - 2015-07-16T00:12:20.350Z] Session [533b15a0-2b4f-11e5-83c5-f9b83e05112e] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-16T00:12:20.350Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 533b15a0-2b4f-11e5-83c5-f9b83e05112e
+[INFO  - 2015-07-16T00:17:19.697Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-16T00:17:19.698Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '533b15a0-2b4f-11e5-83c5-f9b83e05112e', because windowless
+2c131c0-2b4f-11e5-860f-5be3ed983b85] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"windows-8-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-16T00:15:27.455Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: c2c131c0-2b4f-11e5-860f-5be3ed983b85
+[INFO  - 2015-07-16T00:20:26.769Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-16T00:20:26.769Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session 'c2c131c0-2b4f-11e5-860f-5be3ed983b85', because windowless

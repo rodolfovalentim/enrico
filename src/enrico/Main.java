@@ -4,7 +4,8 @@ import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 
-import punchsub.PunchSubEpisodeListPage;
+import animakai.AnimaKaiEpisodeListPage;
+import fansubs.FansubAnimePage;
 
 public class Main {
 
@@ -15,8 +16,8 @@ public class Main {
 	public static void main(String[] args) throws InterruptedException,
 			IOException {
 
-		PunchSubEpisodeListPage teste = new PunchSubEpisodeListPage(489);
-
+		FansubAnimePage rokkaAnik = new AnimaKaiEpisodeListPage(8);
+		System.out.println(rokkaAnik.getAllEpisodes(Quality.FullHD));
 		// PunchSubEpisodeListPage teste = new PunchSubEpisodeListPage(567);
 
 		/*

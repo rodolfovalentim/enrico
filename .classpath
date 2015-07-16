@@ -2,13 +2,13 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/rodolfo/workspace/enrico/libraries/htmlunit-2.17-OSGi.jar"/>
-	<classpathentry kind="lib" path="/home/rodolfo/workspace/enrico/libraries/java-json.jar"/>
-	<classpathentry kind="lib" path="/home/rodolfo/workspace/enrico/libraries/jsoup-1.8.2.jar"/>
-	<classpathentry kind="lib" path="/home/rodolfo/workspace/enrico/libraries/jsoup-1.8.2-javadoc.jar"/>
-	<classpathentry kind="lib" path="/home/rodolfo/workspace/enrico/libraries/jsoup-1.8.2-sources.jar"/>
-	<classpathentry kind="lib" path="/home/rodolfo/workspace/enrico/libraries/MegaAPI.jar"/>
-	<classpathentry kind="lib" path="/home/rodolfo/workspace/enrico/libraries/selenium-server-standalone-2.46.0.jar"/>
-	<classpathentry kind="lib" path="/home/rodolfo/workspace/enrico/libraries/sqlite-jdbc-3.8.10.1.jar"/>
+	<classpathentry kind="lib" path="/RemoteSystemsTempFiles/libraries/htmlunit-2.17-OSGi.jar"/>
+	<classpathentry kind="lib" path="/RemoteSystemsTempFiles/libraries/java-json.jar"/>
+	<classpathentry kind="lib" path="/RemoteSystemsTempFiles/libraries/jsoup-1.8.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="/RemoteSystemsTempFiles/libraries/jsoup-1.8.2-sources.jar"/>
+	<classpathentry kind="lib" path="/RemoteSystemsTempFiles/libraries/jsoup-1.8.2.jar"/>
+	<classpathentry kind="lib" path="/RemoteSystemsTempFiles/libraries/MegaAPI.jar"/>
+	<classpathentry kind="lib" path="/RemoteSystemsTempFiles/libraries/selenium-server-standalone-2.46.0.jar"/>
+	<classpathentry kind="lib" path="/RemoteSystemsTempFiles/libraries/sqlite-jdbc-3.8.10.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
