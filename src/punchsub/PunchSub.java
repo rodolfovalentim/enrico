@@ -1,9 +1,10 @@
 package punchsub;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
+import fansubs.*;
 import linkapi.PreparedLink;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,8 +12,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 import enrico.Episode;
+import enrico.Quality;
 
-public class PunchSubEpisodeListPage {
+public class PunchSub extends Fansub{
 
 	private static String preparedLink = "http://punchsub.com/#listar/*/episodios/*/*";
 	private static String[] quality = { "fullhd", "hd", "sd", "mp4" };
@@ -63,7 +65,7 @@ public class PunchSubEpisodeListPage {
 					name = l.getText();
 					link = l.getAttribute("href");
 					if (!name.startsWith("Link")) {
-						e.addMirror(name, PunchSubProtectorPage.getWithoutWait(
+						e.addMirror(name, PunchSub.getWithoutWait(
 								iteratorDriver, link));
 					}
 				}
@@ -74,8 +76,9 @@ public class PunchSubEpisodeListPage {
 		return episodes;
 	}
 
-	public static void getLastEpisode(String id, String latest) {
+	public static Episode getLastEpisode(String id, String latest) {
 		WebDriver driver = new PhantomJSDriver();
+		WebDriver iteratorDriver = new PhantomJSDriver();
 
 		PreparedLink url = new PreparedLink(preparedLink);
 		url.set(0, id);
@@ -91,17 +94,35 @@ public class PunchSubEpisodeListPage {
 
 		driver.get(url.toString());
 		driver.navigate().refresh();
-		
+
 		java.util.List<WebElement> episodeBox = driver.findElements(By
 				.cssSelector(".listagemLinks,.listagemEp"));
 
+		String title = episodeBox.get(episodeBox.size() - 2).getText();
+		String[] arr = null;
+		String name = "";
+		String link = "";
+
 		// Hard to do, hard to understand
-		if (!episodeBox.get(episodeBox.size() - 2).getText()
-				.equals(latest)) {			
-			System.out.println("Downloading last episode: " + episodeBox.get(episodeBox.size() - 2).getText());
-			System.out.println("Downloading last episode: " + episodeBox.get(episodeBox.size() - 1).getText());
+		if (!title.equals(latest)) {
+			arr = title.split(" ", 2);
+			Episode e = new Episode(title, Integer.valueOf(arr[1]));
+
+			java.util.List<WebElement> linksDownload = episodeBox.get(
+					episodeBox.size() - 1).findElements(By.tagName("a"));
+
+			for (WebElement l : linksDownload) {
+				name = l.getText();
+				link = l.getAttribute("href");
+				if (!name.startsWith("Link")) {
+					e.addMirror(name, PunchSub.getWithoutWait(
+							iteratorDriver, link));
+				}
+			}
+			return e;
 		} else {
 			System.out.println("Anime up-to-date");
+			return null;
 		}
 	}
 
@@ -113,7 +134,35 @@ public class PunchSubEpisodeListPage {
 		return quality;
 	}
 
-	public PunchSubEpisodeListPage(int id, String quality) {
+	public PunchSub(int id, String quality) {
 
+	}
+	
+	public static String getWithoutWait(WebDriver driver, String relativeUrl) {
+
+		driver.get(relativeUrl);
+		WebElement pulaBottom = driver.findElement(By
+				.className("download-pular"));
+		pulaBottom.click();
+		WebElement divBottom = driver.findElement(By.id("download-botao"));
+		return divBottom.getAttribute("href");
+	}
+
+	@Override
+	public Episode getLastEpisode(Quality quality) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Episode> getAllEpisodes(Quality quality) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Episode getEpisode(int number, Quality quality) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -13,10 +13,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import enrico.Episode;
 import enrico.Mirror;
 import enrico.Quality;
-import fansubs.FansubAnimePage;
+import fansubs.Fansub;
 import linkapi.PreparedLink;
 
-public class AnimaKaiEpisodeListPage extends FansubAnimePage {
+public class AnimaKai extends Fansub {
 	
 	private static String renameQuality (Quality q){
 		if(q.equals(Quality.FullHD))
@@ -116,7 +116,7 @@ public class AnimaKaiEpisodeListPage extends FansubAnimePage {
 		}
 	}
 	
-	public AnimaKaiEpisodeListPage (int id){
+	public AnimaKai (int id){
 		preparedLink = "http://www.animakai.tv/anime/*/";
 		PreparedLink url = new PreparedLink(preparedLink);
 		url.set(0, Integer.toString(id));

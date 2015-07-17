@@ -5,7 +5,7 @@ import java.util.List;
 import enrico.Episode;
 import enrico.Quality;
 
-public abstract class FansubAnimePage {
+public abstract class Fansub {
 
 	protected String id;
 	protected String preparedLink;
