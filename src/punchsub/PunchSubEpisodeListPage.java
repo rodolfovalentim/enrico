@@ -1,6 +1,9 @@
 package punchsub;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
 import linkapi.PreparedLink;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +17,7 @@ public class PunchSubEpisodeListPage {
 	private static String preparedLink = "http://punchsub.com/#listar/*/episodios/*/*";
 	private static String[] quality = { "fullhd", "hd", "sd", "mp4" };
 
-	public PunchSubEpisodeListPage(int id) {
+	public static ArrayList<Episode> getAllEpisodes(String id) {
 
 		ArrayList<Episode> episodes = new ArrayList<Episode>();
 
@@ -22,7 +25,7 @@ public class PunchSubEpisodeListPage {
 		WebDriver iteratorDriver = new PhantomJSDriver();
 
 		PreparedLink url = new PreparedLink(preparedLink);
-		url.set(0, Integer.toString(id));
+		url.set(0, id);
 		url.set(1, quality[1]);
 		url.set(2, "1");
 
@@ -30,24 +33,31 @@ public class PunchSubEpisodeListPage {
 
 		java.util.List<WebElement> paging = driver.findElements(By
 				.className("epList"));
+
 		int numberOfPages = paging.size();
 
 		for (int j = 1; j <= numberOfPages; j++) {
+
 			url.set(2, String.valueOf(j));
 			driver.get(url.toString());
 			driver.navigate().refresh();
+
 			java.util.List<WebElement> episodeBox = driver.findElements(By
-					.className("listagemLinks"));
+					.cssSelector(".listagemLinks,.listagemEp"));
 
-			int i = 1;
+			String title = "";
+			String name = "";
+			String link = "";
+			String[] arr = null;
 
-			for (WebElement divBox : episodeBox) {
-				java.util.List<WebElement> linksDownload = divBox
+			for (Iterator<WebElement> tuplas = episodeBox.iterator(); tuplas
+					.hasNext();) {
+				title = tuplas.next().getText();
+				arr = title.split(" ", 2);
+				Episode e = new Episode(title, Integer.valueOf(arr[1]));
+
+				java.util.List<WebElement> linksDownload = tuplas.next()
 						.findElements(By.tagName("a"));
-
-				Episode e = new Episode("", i++);
-				String name = "";
-				String link = "";
 
 				for (WebElement l : linksDownload) {
 					name = l.getText();
@@ -59,42 +69,48 @@ public class PunchSubEpisodeListPage {
 				}
 				episodes.add(e);
 			}
-
 			driver.close();
-			System.out.println("Closed");
 		}
+		return episodes;
 	}
 
-	private static void getAllPage(String id, String page) {
+	public static void getLastEpisode(String id, String latest) {
+		WebDriver driver = new PhantomJSDriver();
 
-	}
+		PreparedLink url = new PreparedLink(preparedLink);
+		url.set(0, id);
+		url.set(1, quality[1]);
+		url.set(2, "1");
 
-	public static void getAll(String id) {
+		driver.get(url.toString());
 
-	}
+		java.util.List<WebElement> paging = driver.findElements(By
+				.className("epList"));
+		int numberOfPages = paging.size();
+		url.set(2, String.valueOf(numberOfPages));
 
-	public static void getLatestIfThereIs(String id, String latest) {
+		driver.get(url.toString());
+		driver.navigate().refresh();
+		
+		java.util.List<WebElement> episodeBox = driver.findElements(By
+				.cssSelector(".listagemLinks,.listagemEp"));
 
-	}
-
-	public static void search(String anime) {
-
+		// Hard to do, hard to understand
+		if (!episodeBox.get(episodeBox.size() - 2).getText()
+				.equals(latest)) {			
+			System.out.println("Downloading last episode: " + episodeBox.get(episodeBox.size() - 2).getText());
+			System.out.println("Downloading last episode: " + episodeBox.get(episodeBox.size() - 1).getText());
+		} else {
+			System.out.println("Anime up-to-date");
+		}
 	}
 
 	public String getPreparedLink() {
 		return preparedLink;
 	}
 
-	public void setPreparedLink(String preparedLink) {
-		this.preparedLink = preparedLink;
-	}
-
 	public String[] getQuality() {
 		return quality;
-	}
-
-	public void setQuality(String[] quality) {
-		this.quality = quality;
 	}
 
 	public PunchSubEpisodeListPage(int id, String quality) {
