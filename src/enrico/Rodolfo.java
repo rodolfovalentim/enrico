@@ -4,7 +4,7 @@ import java.io.IOException;
 import enricoDAO.AnimeDAO;
 import fansubs.AnimaKai;
 
-public class Main {
+public class Rodolfo {
 
 	public static void main(String[] args) throws InterruptedException,
 			IOException {
