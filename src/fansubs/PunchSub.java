@@ -1,10 +1,9 @@
-package punchsub;
+package fansubs;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import fansubs.*;
 import linkapi.PreparedLink;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

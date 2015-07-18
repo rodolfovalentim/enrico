@@ -1,4 +1,4 @@
-package animakai;
+package fansubs;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import enrico.Episode;
 import enrico.Mirror;
 import enrico.Quality;
-import fansubs.Fansub;
 
 public class AnimaKai extends Fansub {
 

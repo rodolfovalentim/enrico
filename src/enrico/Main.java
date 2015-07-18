@@ -2,7 +2,7 @@ package enrico;
 
 import java.io.IOException;
 import enricoDAO.AnimeDAO;
-import animakai.AnimaKai;
+import fansubs.AnimaKai;
 
 public class Main {
 
