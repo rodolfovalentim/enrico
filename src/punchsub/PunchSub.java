@@ -149,7 +149,7 @@ public class PunchSub extends Fansub {
 	}
 
 	public PunchSub(String id, String preparedLink) {
-		super(id, preparedLink);
+		super(id);
 	}
 	
 	private String renameQuality(Quality quality)

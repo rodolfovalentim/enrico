@@ -3,6 +3,8 @@ package animakai;
 import java.util.ArrayList;
 import java.util.List;
 
+import linkapi.PreparedLink;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -129,8 +131,10 @@ public class AnimaKai extends Fansub {
 		}
 	}
 
-	public AnimaKai(String id, String preparedLink) {
-		super(id, preparedLink);
+	public AnimaKai(String id) {
+		super(id);
+		preparedLink = new PreparedLink("http://www.animakai.tv/anime/*/");
+		preparedLink.set(0, id);
 	}
 
 	@Override

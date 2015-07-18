@@ -2,14 +2,18 @@ package fansubs;
 
 import java.util.List;
 import linkapi.PreparedLink;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+
 import enrico.Episode;
 import enrico.Quality;
 
 public abstract class Fansub {
 
+	protected String id;
 	protected String name;
 	protected String website;
-	protected String id;
 	protected PreparedLink preparedLink;
 
 	public String getName() {
@@ -38,9 +42,8 @@ public abstract class Fansub {
 
 	public abstract Episode getEpisode(int number, Quality quality);
 
-	public Fansub(String id, String preparedLink) {
+	public Fansub(String id) {
 		setId(id);
-		setPreparedLink(preparedLink);
 	}
 
 	public String getId() {
@@ -57,5 +60,29 @@ public abstract class Fansub {
 
 	public void setPreparedLink(String preparedLink) {
 		this.preparedLink = new PreparedLink(preparedLink);
+	}
+
+	public static int getAnimeID(String name) {
+		WebDriver driver = new PhantomJSDriver();
+		name.replaceAll("\\s", "+");
+		driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search="
+				+ name);
+
+		int out = -1;
+
+		try {
+			out = Integer.valueOf(driver.getCurrentUrl().split("=")[2]);
+		} catch (java.lang.NumberFormatException e) {
+			driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search="
+					+ "\"" + name + "\"");
+			try {
+				out = Integer.valueOf(driver.getCurrentUrl().split("=")[2]);
+			} catch (java.lang.NumberFormatException e2) {
+
+			}
+		}
+		driver.close();
+
+		return out;
 	}
 }

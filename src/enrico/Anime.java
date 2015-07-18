@@ -77,4 +77,4 @@ public class Anime extends TVShow {
 	public void setFansubs(ArrayList<Fansub> fansubs) {
 		this.fansubs = fansubs;
 	}
-}
+	}

@@ -41,7 +41,14 @@ public class Episode {
 		return s;
 
 	}
-
+	
+	public void mergeMirrors(Episode ep){
+		if (this.equals(ep)){
+			this.mirrors.addAll(ep.getMirrors());
+		}
+	}
+	
+// Getters and Setters
 	public String getTitle() {
 		return title;
 	}
@@ -72,6 +79,17 @@ public class Episode {
 
 	public void setMirrors() {
 		this.mirrors = new ArrayList<Mirror>();
+	}
+	
+// Overrided Methods 	
+	@Override
+	public boolean equals(Object obj){
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+	        return false;
+		Episode ep = (Episode) obj;
+		return (this.episode == ep.episode);
 	}
 
 }
