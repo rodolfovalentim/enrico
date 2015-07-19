@@ -1,13 +1,17 @@
 package enrico;
 
+import download.DownloadLink;
+
 public class Mirror {
 
 	String name;
 	String link;
+	DownloadLink download;
 
 	public Mirror(String name, String link) {
 		setName(name);
 		setLink(link);
+		download = DownloadLink.create(link);
 	}
 
 	public String toString() {
@@ -26,8 +30,17 @@ public class Mirror {
 		return link;
 	}
 
+	public DownloadLink getDownload() {
+		return download;
+	}
+
+	public void setDownload(DownloadLink download) {
+		this.download = download;
+	}
+
 	public void setLink(String link) {
 		this.link = link;
+		download = DownloadLink.create(link);
 	}
 
 }

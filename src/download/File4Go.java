@@ -20,12 +20,10 @@ public class File4Go extends DownloadLink {
 		System.out.println(link);
 		clickButton(driver,By.className("gerarlinkdownload"));
 		String output = driver.findElement(By.className("ddda")).getAttribute("href");
-		System.out.println(output);
 		driver.close();
 		try {
 			download (output, path, URLDecoder.decode(output.split("/")[output.split("/").length-1],"UTF-8"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

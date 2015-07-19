@@ -1,14 +1,14 @@
 package enrico;
 
+import fansubs.AnimaKai;
 import fansubs.Fansub;
-import fansubs.VisionSub;
 
 public class Renan {
 
 	public static void main(String[] args) {
-		Fansub vision = new VisionSub("kuroko-no-basket-3");
-		System.out.println(vision.getLastEpisode(Quality.HD));
-
+		Fansub vision = new AnimaKai("1885");
+		for (Mirror m : vision.getEpisode(2,Quality.HD).getMirrors())
+			System.out.println(m.download);
 	}
 
 }

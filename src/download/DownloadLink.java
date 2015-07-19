@@ -41,5 +41,23 @@ public abstract class DownloadLink {
 	}
 	
 	public abstract void download(String path);
+
+	public static DownloadLink create(String downLink) {
+		switch(downLink.split("/")[2]){
+			case("mega.co.nz"):
+				return new Mega(downLink);
+			case("mega.nz"):
+				return new Mega(downLink);
+			case("www.sizedrive.com"):
+				return new File4Go(downLink);
+			case("uppit.com"):
+				return new UppIt(downLink);
+			case("www.solidfiles.com"):
+				return new SolidFiles(downLink);
+			case("www.visionshare.com.br"):
+				return new DirectVision(downLink);
+		}
+		return null;
+	}
 	
 }
