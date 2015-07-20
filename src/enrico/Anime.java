@@ -77,4 +77,15 @@ public class Anime extends TVShow {
 	public void setFansubs(ArrayList<Fansub> fansubs) {
 		this.fansubs = fansubs;
 	}
+	
+	@Override
+	public boolean equals(Object obj){
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+	        return false;
+		Anime anime = (Anime) obj;
+		return (this.id == anime.id);
 	}
+	
+}

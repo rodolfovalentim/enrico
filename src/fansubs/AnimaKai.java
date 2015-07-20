@@ -3,8 +3,6 @@ package fansubs;
 import java.util.ArrayList;
 import java.util.List;
 
-import linkapi.PreparedLink;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,12 +10,15 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import enrico.Anime;
 import enrico.Episode;
 import enrico.Mirror;
 import enrico.Quality;
+import linkapi.PreparedLink;
 
 public class AnimaKai extends Fansub {
 
+	//Private methods
 	private static String renameQuality(Quality q) {
 		if (q.equals(Quality.FullHD))
 			return "1080p";
@@ -129,7 +130,7 @@ public class AnimaKai extends Fansub {
 				m.setLink(protectedBy(m.getLink(), driver));
 		}
 	}
-
+// Public methods
 	public AnimaKai(String id) {
 		super(id);
 		preparedLink = new PreparedLink("http://www.animakai.tv/anime/*/");
@@ -168,4 +169,9 @@ public class AnimaKai extends Fansub {
 		return ep;
 	}
 
+	public static void getAllAnimes(List<Anime> animeList){
+		WebDriver driver = new PhantomJSDriver();
+		
+	}
+	
 }
