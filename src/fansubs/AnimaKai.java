@@ -1,6 +1,7 @@
 package fansubs;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -130,7 +131,16 @@ public class AnimaKai extends Fansub {
 				m.setLink(protectedBy(m.getLink(), driver));
 		}
 	}
-// Public methods
+
+	private static void getAnimesFromPage(List<WebElement> elements, Hashtable<Integer,Anime> animes){
+		for (WebElement e : elements){
+			e = e.findElement(By.className("sl_title")).findElement(By.tagName("a"));
+			int id = Fansub.getAnimeID(e.getText());
+			Anime anime = new Anime(id,e.getText(),"","","");
+			animes.put(id, anime);
+		}
+	}
+	// Public methods
 	public AnimaKai(String id) {
 		super(id);
 		preparedLink = new PreparedLink("http://www.animakai.tv/anime/*/");
@@ -169,9 +179,20 @@ public class AnimaKai extends Fansub {
 		return ep;
 	}
 
-	public static void getAllAnimes(List<Anime> animeList){
+	public static Hashtable<Integer,Anime> getAllAnimes(){
+		Hashtable<Integer,Anime> animeList = new Hashtable<Integer,Anime>();
 		WebDriver driver = new PhantomJSDriver();
-		
+		int page = 1;
+		List<WebElement> elements = null;
+		do {
+			System.out.println("http://www.animakai.tv/animes/"+(page++)+"/");
+			driver.get("http://www.animakai.tv/animes/"+(page++)+"/");
+			elements = driver.findElements(By.className("sl_details "));
+			System.out.println(elements.size() > 0);
+			getAnimesFromPage(elements,animeList);
+			System.out.println(elements.size() > 0);
+		}while(elements.size() > 0);
+		driver.close();
+		return animeList;
 	}
-	
 }
