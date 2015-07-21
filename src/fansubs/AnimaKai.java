@@ -135,14 +135,14 @@ public class AnimaKai extends Fansub {
 		}
 	}
 
-	private static void getAnimesFromPage(List<WebElement> elements, Hashtable<Integer,Anime> animes,WebDriver driver){
+	private static void getAnimesFromPage(List<WebElement> elements, ArrayList<Anime> animes){
 		for (WebElement e : elements){
 			e = e.findElement(By.className("sl_title")).findElement(By.tagName("a"));
 			int id = 0;
 			System.out.println(e.getText());
 			System.out.println(id);
 			Anime anime = new Anime(e.getText(),"","",id,"","","");
-			animes.put(id, anime);
+			animes.add(anime);
 		}
 	}
 	// Public methods
@@ -184,19 +184,9 @@ public class AnimaKai extends Fansub {
 		return ep;
 	}
 
-	public static Hashtable<Integer,Anime> getAllAnimes(){
-		Hashtable<Integer,Anime> animeList = new Hashtable<Integer,Anime>();
+	public static List<Anime> getAllAnimes(){
+		ArrayList<Anime> animeList = new ArrayList<Anime>();
 		WebDriver driver = new PhantomJSDriver();
-		
-		String PROXY = "176.31.170.136:8080";
-		org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
-		proxy.setHttpProxy(PROXY)
-		     .setFtpProxy(PROXY)
-		     .setSslProxy(PROXY);
-		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability(CapabilityType.PROXY, proxy);
-		WebDriver auxDriver = new FirefoxDriver(cap);
-		
 		int page = 1;
 		List<WebElement> elements = null;
 		do {
@@ -204,13 +194,12 @@ public class AnimaKai extends Fansub {
 			try{
 				driver.get("http://www.animakai.tv/animes/"+(page++)+"/");
 				elements = driver.findElements(By.className("sl_details "));
-				getAnimesFromPage(elements,animeList,auxDriver);
+				getAnimesFromPage(elements,animeList);
 			}catch(Exception e){
 				page --;
 			}
 		}while(elements.size() > 0);
 		driver.close();
-		auxDriver.close();
 		return animeList;
 	}
 }

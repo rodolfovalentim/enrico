@@ -1,11 +1,11 @@
 package enrico;
 
-import fansubs.AnimaKai;
+import fansubs.VisionSub;
 
 public class Renan {
 
 	public static void main(String[] args) {
-		System.out.println(AnimaKai.getAllAnimes());
+		System.out.println(VisionSub.getAllAnimes().size());
 	}
 
 }

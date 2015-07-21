@@ -7,7 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
+import enrico.Anime;
 import enrico.Episode;
 import enrico.Mirror;
 import enrico.Quality;
@@ -60,6 +62,19 @@ public class VisionSub extends Fansub {
 				ep.addMirror(text, href);
 		}
 		return ep;
+	}
+	
+	private static void getAnimesFromPage(List<WebElement> elements, ArrayList<Anime> animes){
+		for (WebElement e : elements){
+			int id = 0;
+			String[] name = e.getAttribute("href").split("/");
+			if (name.length>4){
+				if (name[5].length() > 1){
+					Anime anime = new Anime(name[5].replace('-', ' '),"","",id,"","","");
+					animes.add(anime);
+				}
+			}
+		}
 	}
 	
 	@Override
@@ -146,4 +161,25 @@ public class VisionSub extends Fansub {
 		return episode;
 	}
 
+	public static List<Anime> getAllAnimes (){
+		ArrayList<Anime> animeList = new ArrayList<Anime>();
+		
+		WebDriver driver = new PhantomJSDriver();
+		int page = 0;
+		List<WebElement> elements = null;
+		do {
+			System.out.println("http://www.visionfansub.com.br/episodios/pagina/"+(page)+"/");
+			try{
+				driver.get("http://www.visionfansub.com.br/episodios/pagina/"+(page++)+"/");
+				elements = driver.findElement(By.id("area_conteudo_site")).findElements(By.tagName("a"));
+				getAnimesFromPage(elements,animeList);
+			}catch(Exception e){
+				page --;
+			}
+			System.out.println(elements.size());
+		}while(elements.size() > 52);
+		driver.close();
+		
+		return animeList;
+	}
 }
