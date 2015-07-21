@@ -54,7 +54,7 @@ public class PunchSub extends Fansub {
 						.hasNext();) {
 					title = tuplas.next().getText();
 					arr = title.split(" ", 2);
-					Episode e = new Episode(title, Integer.valueOf(arr[1]));
+					Episode e = new Episode(title, Integer.valueOf(arr[1]), quality.toString());
 
 					java.util.List<WebElement> linksDownload = tuplas.next()
 							.findElements(By.tagName("a"));
@@ -111,7 +111,7 @@ public class PunchSub extends Fansub {
 
 			// Hard to do, hard to understand
 			arr = title.split(" ", 2);
-			Episode e = new Episode(title, Integer.valueOf(arr[1]));
+			Episode e = new Episode(title, Integer.valueOf(arr[1]), quality.toString());
 
 			java.util.List<WebElement> linksDownload = episodeBox.get(
 					episodeBox.size() - 1).findElements(By.tagName("a"));

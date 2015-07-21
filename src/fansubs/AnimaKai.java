@@ -58,7 +58,7 @@ public class AnimaKai extends Fansub {
 			} catch (org.openqa.selenium.NoSuchElementException exc) {
 				String str = e.getText().replaceAll("[^0123456789]", "");
 				if (!str.isEmpty())
-					episodes.add(new Episode("", Integer.valueOf(str)));
+					episodes.add(new Episode("", Integer.valueOf(str), quality.toString()));
 			}
 		}
 	}
@@ -79,7 +79,7 @@ public class AnimaKai extends Fansub {
 			} catch (org.openqa.selenium.NoSuchElementException exc) {
 				String str = e.getText().replaceAll("[^0123456789]", "");
 				if (!str.isEmpty())
-					episode = new Episode("", Integer.valueOf(str));
+					episode = new Episode("", Integer.valueOf(str), quality.toString());
 			}
 		}
 		return episode;
@@ -105,7 +105,7 @@ public class AnimaKai extends Fansub {
 					if (episode != null)
 						break;
 					if (Integer.valueOf(str).equals(number))
-						episode = new Episode("", Integer.valueOf(str));
+						episode = new Episode("", Integer.valueOf(str), quality.toString());
 				}
 			}
 		}

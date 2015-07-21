@@ -10,16 +10,27 @@ public class Episode {
 	java.util.Date exibitionDate;
 	ArrayList<Mirror> mirrors;
 
-	public Episode(String title, int episode) {
+	public Episode(String title, int episode, String quality, String mirrors) {
 		setTitle(title);
 		setExibitionDate(new java.util.Date());
+		setQuality(quality);
+		setEpisode(episode);
+		setMirrors(mirrors);
+	}
+	
+	public Episode(String title, int episode, String quality) {
+		setTitle(title);
+		setExibitionDate(new java.util.Date());
+		setQuality(quality);
 		setEpisode(episode);
 		setMirrors();
 	}
 
-	public Episode(String title, int episode, java.util.Date exibition) {
+	public Episode(String title, int episode, java.util.Date exibition,
+			String quality) {
 		setTitle(title);
 		setExibitionDate(exibition);
+		setQuality(quality);
 		setEpisode(episode);
 		setMirrors();
 	}
@@ -41,14 +52,24 @@ public class Episode {
 		return s;
 
 	}
-	
-	public void mergeMirrors(Episode ep){
-		if (this.equals(ep)){
+
+	public void mergeMirrors(Episode ep) {
+		if (this.equals(ep)) {
 			this.mirrors.addAll(ep.getMirrors());
 		}
 	}
+
+	public String getMirrorstoString() {
+		String s = "";
+		ArrayList<Mirror> mirrors = getMirrors();
+
+		for (Mirror m : mirrors)
+			s = s + m.toString() + ",";
+
+		return s;
+	}
 	
-// Getters and Setters
+	// Getters and Setters
 	public String getTitle() {
 		return title;
 	}
@@ -73,6 +94,14 @@ public class Episode {
 		this.exibitionDate = exibitionDate;
 	}
 
+	public String getQuality() {
+		return quality;
+	}
+
+	public void setQuality(String quality) {
+		this.quality = quality;
+	}
+
 	public ArrayList<Mirror> getMirrors() {
 		return mirrors;
 	}
@@ -81,13 +110,18 @@ public class Episode {
 		this.mirrors = new ArrayList<Mirror>();
 	}
 	
-// Overrided Methods 	
+	public void setMirrors(String mirrors) {
+		this.mirrors = new ArrayList<Mirror>();
+	}
+
+
+	// Overrided Methods
 	@Override
-	public boolean equals(Object obj){
+	public boolean equals(Object obj) {
 		if (obj == null)
 			return false;
 		if (getClass() != obj.getClass())
-	        return false;
+			return false;
 		Episode ep = (Episode) obj;
 		return (this.episode == ep.episode);
 	}

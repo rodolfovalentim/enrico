@@ -61,28 +61,4 @@ public abstract class Fansub {
 	public void setPreparedLink(String preparedLink) {
 		this.preparedLink = new PreparedLink(preparedLink);
 	}
-
-	public static int getAnimeID(String name) {
-		WebDriver driver = new PhantomJSDriver();
-		name.replaceAll("\\s", "+");
-		driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search="
-				+ name);
-
-		int out = -1;
-
-		try {
-			out = Integer.valueOf(driver.getCurrentUrl().split("=")[2]);
-		} catch (java.lang.NumberFormatException e) {
-			driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search="
-					+ "\"" + name + "\"");
-			try {
-				out = Integer.valueOf(driver.getCurrentUrl().split("=")[2]);
-			} catch (java.lang.NumberFormatException e2) {
-
-			}
-		}
-		driver.close();
-
-		return out;
-	}
 }

@@ -7264,6 +7264,7 @@ e5-a825-31443a334e2b] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phan
 [INFO  - 2015-07-18T00:29:43.162Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2015-07-18T00:29:51.644Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2015-07-18T00:29:53.416Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+<<<<<<< Updated upstream
 =======
 [INFO  - 2015-07-17T16:53:11.339Z] GhostDriver - Main - running on port 37037
 [INFO  - 2015-07-17T16:53:11.795Z] Session [4f1827f0-2ca4-11e5-b3e1-6b958fd881cd] - CONSTRUCTOR - Desired Capabilities: {"browserName":"phantomjs","version":"","platform":"ANY"}
@@ -7849,3 +7850,10 @@ se starting NOW
 [INFO  - 2015-07-19T20:40:23.905Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 614a90d0-2e56-11e5-bbfa-0b90a92b4200
 [INFO  - 2015-07-19T20:45:23.221Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2015-07-19T20:45:23.221Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '614a90d0-2e56-11e5-bbfa-0b90a92b4200', because windowless
+=======
+[INFO  - 2015-07-18T00:30:02.974Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-18T00:30:25.509Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-18T00:30:32.570Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-18T00:31:00.115Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-18T00:31:08.763Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+>>>>>>> Stashed changes
