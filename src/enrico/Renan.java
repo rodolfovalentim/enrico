@@ -1,6 +1,5 @@
 package enrico;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import fansubs.AnimaKai;
@@ -12,31 +11,23 @@ public class Renan {
 		List<Anime> animaKaiAnimes = AnimaKai.getAllAnimes();
 		List<Anime> visionSubAnimes = VisionSub.getAllAnimes();
 
-		int similares;
 		double highestSimilarity;
-		String similarest = "";
-
-		System.out.println(animaKaiAnimes.size() + " : "
-				+ visionSubAnimes.size());
+		Anime similar = null;
 
 		for (Anime va : visionSubAnimes) {
-			similares = 0;
 			highestSimilarity = 0;
 			System.out.print(va.name + " : ");
 			for (Anime aka : animaKaiAnimes) {
 				double sim = StringSimilarity.similarity(aka.name, va.name);
-				if (sim > 0.85) {
-					similares++;
-				}
-				if (sim > highestSimilarity) {
+				if (sim > highestSimilarity && sim > 0.78) {
 					highestSimilarity = sim;
-					similarest = aka.name;
+					similar = aka;
 				}
 			}
-			System.out.println(similarest + " (" + similares + " : "
-					+ highestSimilarity + ")");
+			if (similar!=null)
+				similar.mergeFansubs(va);
 		}
-
+		System.out.println(animaKaiAnimes);
 	}
 
 }
