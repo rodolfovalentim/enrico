@@ -139,8 +139,6 @@ public class AnimaKai extends Fansub {
 		for (WebElement e : elements){
 			e = e.findElement(By.className("sl_title")).findElement(By.tagName("a"));
 			int id = 0;
-			System.out.println(e.getText());
-			System.out.println(id);
 			Anime anime = new Anime(e.getText(),"","",id,"","","");
 			animes.add(anime);
 		}
@@ -190,7 +188,6 @@ public class AnimaKai extends Fansub {
 		int page = 1;
 		List<WebElement> elements = null;
 		do {
-			System.out.println("http://www.animakai.tv/animes/"+(page)+"/");
 			try{
 				driver.get("http://www.animakai.tv/animes/"+(page++)+"/");
 				elements = driver.findElements(By.className("sl_details "));

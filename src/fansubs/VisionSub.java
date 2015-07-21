@@ -168,7 +168,6 @@ public class VisionSub extends Fansub {
 		int page = 0;
 		List<WebElement> elements = null;
 		do {
-			System.out.println("http://www.visionfansub.com.br/episodios/pagina/"+(page)+"/");
 			try{
 				driver.get("http://www.visionfansub.com.br/episodios/pagina/"+(page++)+"/");
 				elements = driver.findElement(By.id("area_conteudo_site")).findElements(By.tagName("a"));
@@ -176,7 +175,6 @@ public class VisionSub extends Fansub {
 			}catch(Exception e){
 				page --;
 			}
-			System.out.println(elements.size());
 		}while(elements.size() > 52);
 		driver.close();
 		
