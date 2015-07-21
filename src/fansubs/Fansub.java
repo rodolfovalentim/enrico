@@ -62,12 +62,13 @@ public abstract class Fansub {
 		this.preparedLink = new PreparedLink(preparedLink);
 	}
 
-	public static int getAnimeID(String name) {
-		WebDriver driver = new PhantomJSDriver();
+	public static int getAnimeID(String name,WebDriver driver) {
 		name.replaceAll("\\s", "+");
 		driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search="
 				+ name);
 
+		driver.navigate().refresh();
+		System.out.println(driver.getCurrentUrl());
 		int out = -1;
 
 		try {
@@ -81,7 +82,6 @@ public abstract class Fansub {
 
 			}
 		}
-		driver.close();
 
 		return out;
 	}

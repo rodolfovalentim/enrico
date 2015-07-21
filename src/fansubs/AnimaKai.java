@@ -7,7 +7,10 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -132,10 +135,12 @@ public class AnimaKai extends Fansub {
 		}
 	}
 
-	private static void getAnimesFromPage(List<WebElement> elements, Hashtable<Integer,Anime> animes){
+	private static void getAnimesFromPage(List<WebElement> elements, Hashtable<Integer,Anime> animes,WebDriver driver){
 		for (WebElement e : elements){
 			e = e.findElement(By.className("sl_title")).findElement(By.tagName("a"));
-			int id = Fansub.getAnimeID(e.getText());
+			int id = Fansub.getAnimeID(e.getText(),driver);
+			System.out.println(e.getText());
+			System.out.println(id);
 			Anime anime = new Anime(id,e.getText(),"","","");
 			animes.put(id, anime);
 		}
@@ -182,17 +187,30 @@ public class AnimaKai extends Fansub {
 	public static Hashtable<Integer,Anime> getAllAnimes(){
 		Hashtable<Integer,Anime> animeList = new Hashtable<Integer,Anime>();
 		WebDriver driver = new PhantomJSDriver();
+		
+		String PROXY = "176.31.170.136:8080";
+		org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
+		proxy.setHttpProxy(PROXY)
+		     .setFtpProxy(PROXY)
+		     .setSslProxy(PROXY);
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setCapability(CapabilityType.PROXY, proxy);
+		WebDriver auxDriver = new FirefoxDriver(cap);
+		
 		int page = 1;
 		List<WebElement> elements = null;
 		do {
-			System.out.println("http://www.animakai.tv/animes/"+(page++)+"/");
-			driver.get("http://www.animakai.tv/animes/"+(page++)+"/");
-			elements = driver.findElements(By.className("sl_details "));
-			System.out.println(elements.size() > 0);
-			getAnimesFromPage(elements,animeList);
-			System.out.println(elements.size() > 0);
+			System.out.println("http://www.animakai.tv/animes/"+(page)+"/");
+			try{
+				driver.get("http://www.animakai.tv/animes/"+(page++)+"/");
+				elements = driver.findElements(By.className("sl_details "));
+				getAnimesFromPage(elements,animeList,auxDriver);
+			}catch(Exception e){
+				page --;
+			}
 		}while(elements.size() > 0);
 		driver.close();
+		auxDriver.close();
 		return animeList;
 	}
 }
