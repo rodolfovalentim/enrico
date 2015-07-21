@@ -63,7 +63,7 @@ public class AnimaKai extends Fansub {
 			} catch (org.openqa.selenium.NoSuchElementException exc) {
 				String str = e.getText().replaceAll("[^0123456789]", "");
 				if (!str.isEmpty())
-					episodes.add(new Episode("", Integer.valueOf(str)));
+					episodes.add(new Episode("", Integer.valueOf(str), quality.toString()));
 			}
 		}
 	}
@@ -84,7 +84,7 @@ public class AnimaKai extends Fansub {
 			} catch (org.openqa.selenium.NoSuchElementException exc) {
 				String str = e.getText().replaceAll("[^0123456789]", "");
 				if (!str.isEmpty())
-					episode = new Episode("", Integer.valueOf(str));
+					episode = new Episode("", Integer.valueOf(str), quality.toString());
 			}
 		}
 		return episode;
@@ -110,7 +110,7 @@ public class AnimaKai extends Fansub {
 					if (episode != null)
 						break;
 					if (Integer.valueOf(str).equals(number))
-						episode = new Episode("", Integer.valueOf(str));
+						episode = new Episode("", Integer.valueOf(str), quality.toString());
 				}
 			}
 		}
@@ -138,10 +138,10 @@ public class AnimaKai extends Fansub {
 	private static void getAnimesFromPage(List<WebElement> elements, Hashtable<Integer,Anime> animes,WebDriver driver){
 		for (WebElement e : elements){
 			e = e.findElement(By.className("sl_title")).findElement(By.tagName("a"));
-			int id = Fansub.getAnimeID(e.getText(),driver);
+			int id = 0;
 			System.out.println(e.getText());
 			System.out.println(id);
-			Anime anime = new Anime(id,e.getText(),"","","");
+			Anime anime = new Anime(e.getText(),"","",id,"","","");
 			animes.put(id, anime);
 		}
 	}

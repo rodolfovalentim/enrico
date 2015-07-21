@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
+import enricoDAO.EpisodeDAO;
 import fansubs.Fansub;
 
 public class Anime extends TVShow {
@@ -15,23 +16,19 @@ public class Anime extends TVShow {
 	ArrayList<Episode> episodes;
 	ArrayList<Fansub> fansubs;
 
-	public Anime(int id, String name, String sinopse, String i, String status) {
-		super(name, sinopse, i, status);
+
+	public Anime(String name, String sinopse, String year, int id,
+			String fansubs, String tableEpisodes, String status) {
+		super(name, sinopse, year, status);
 		setId(id);
-		setEpisodes(episodes);
+		setEpisodes(tableEpisodes);
+		setFansubs(fansubs);
 	}
 
-	public void addEpisode(String title, int episode, java.util.Date exibition) {
-		Episode e = new Episode(title, episode, exibition);
+	public void addEpisode(String title, int episode, java.util.Date exibition,
+			String quality) {
+		Episode e = new Episode(title, episode, exibition, quality);
 		getEpisodes().add(e);
-	}
-
-	public ArrayList<Episode> getEpisodes() {
-		return episodes;
-	}
-
-	public void setEpisodes(ArrayList<Episode> episodes) {
-		this.episodes = new ArrayList<Episode>();
 	}
 
 	public static ArrayList<String> search(String searchString) {
@@ -63,15 +60,43 @@ public class Anime extends TVShow {
 	}
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
+	public void setId(String name) {
+		WebDriver driver = new PhantomJSDriver();
+		name.replaceAll("\\s", "+");
+		driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search="
+				+ name);
+
+		int out = -1;
+
+		try {
+			out = Integer.valueOf(driver.getCurrentUrl().split("=")[2]);
+		} catch (java.lang.NumberFormatException e) {
+			driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search="
+					+ "\"" + name + "\"");
+			try {
+				out = Integer.valueOf(driver.getCurrentUrl().split("=")[2]);
+			} catch (java.lang.NumberFormatException e2) {
+
+			}
+		}
+		driver.close();
+
+		this.id = out;
+	}
+
 	public ArrayList<Fansub> getFansubs() {
 		return fansubs;
+	}
+
+	public void setFansubs() {
+		this.fansubs = new ArrayList<Fansub>();
 	}
 
 	public void setFansubs(ArrayList<Fansub> fansubs) {
@@ -87,5 +112,31 @@ public class Anime extends TVShow {
 		Anime anime = (Anime) obj;
 		return (this.id == anime.id);
 	}
-	
+
+	public void setFansubs(String fansubs) {
+		ArrayList<Fansub> f = new ArrayList<Fansub>();
+		String[] tokies = fansubs.split(",");
+
+		for (String s : tokies) {
+			// f.add(new Fansub("", s));
+		}
+	}
+
+	public ArrayList<Episode> getEpisodes() {
+		return episodes;
+	}
+
+	public void setEpisodes(String tableEpisodes) {
+		EpisodeDAO e = new EpisodeDAO();
+		setEpisodes(e.getAll(tableEpisodes));
+	}
+
+	public void setEpisodes() {
+		this.episodes = new ArrayList<Episode>();
+	}
+
+	public void setEpisodes(ArrayList<Episode> episodes) {
+		this.episodes = episodes;
+	}
+
 }

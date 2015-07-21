@@ -51,7 +51,7 @@ public class VisionSub extends Fansub {
 	
 	private static Episode getEpisodeInfo(WebElement elementBox){
 		String title = elementBox.findElement(By.className("skin_ep_ova_titulo_numero")).getText();
-		Episode ep = new Episode(title, Integer.valueOf(title.split(" ")[title.split(" ").length-1]));
+		Episode ep = new Episode(title, Integer.valueOf(title.split(" ")[title.split(" ").length-1]), "");
 		for (WebElement e : elementBox.findElements(By.className("skin_ep_ova_links_area_lista"))){
 			String text = e.findElement(By.tagName("a")).getText();
 			String href = e.findElement(By.tagName("a")).getAttribute("href");
