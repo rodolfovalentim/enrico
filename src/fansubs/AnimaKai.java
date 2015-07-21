@@ -1,16 +1,12 @@
 package fansubs;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,7 +18,11 @@ import linkapi.PreparedLink;
 
 public class AnimaKai extends Fansub {
 
-	//Private methods
+	private String id;
+	private PreparedLink animePage;
+	private PreparedLink listPage;
+
+	// Private methods
 	private static String renameQuality(Quality q) {
 		if (q.equals(Quality.FullHD))
 			return "1080p";
@@ -63,7 +63,8 @@ public class AnimaKai extends Fansub {
 			} catch (org.openqa.selenium.NoSuchElementException exc) {
 				String str = e.getText().replaceAll("[^0123456789]", "");
 				if (!str.isEmpty())
-					episodes.add(new Episode("", Integer.valueOf(str), quality.toString()));
+					episodes.add(new Episode("", Integer.valueOf(str), quality
+							.toString()));
 			}
 		}
 	}
@@ -84,7 +85,8 @@ public class AnimaKai extends Fansub {
 			} catch (org.openqa.selenium.NoSuchElementException exc) {
 				String str = e.getText().replaceAll("[^0123456789]", "");
 				if (!str.isEmpty())
-					episode = new Episode("", Integer.valueOf(str), quality.toString());
+					episode = new Episode("", Integer.valueOf(str),
+							quality.toString());
 			}
 		}
 		return episode;
@@ -110,7 +112,8 @@ public class AnimaKai extends Fansub {
 					if (episode != null)
 						break;
 					if (Integer.valueOf(str).equals(number))
-						episode = new Episode("", Integer.valueOf(str), quality.toString());
+						episode = new Episode("", Integer.valueOf(str),
+								quality.toString());
 				}
 			}
 		}
@@ -135,25 +138,81 @@ public class AnimaKai extends Fansub {
 		}
 	}
 
-	private static void getAnimesFromPage(List<WebElement> elements, ArrayList<Anime> animes){
-		for (WebElement e : elements){
-			e = e.findElement(By.className("sl_title")).findElement(By.tagName("a"));
-			int id = 0;
-			Anime anime = new Anime(e.getText(),"","",id,"","","");
+	private static void getAnimesFromPage(List<WebElement> elements,
+			ArrayList<Anime> animes) {
+		AnimaKai f = null;
+		for (WebElement e : elements) {
+			e = e.findElement(By.className("sl_title")).findElement(
+					By.tagName("a"));
+			String id = AnimaKai.parserURL(e.getAttribute("href"));
+			Anime anime = new Anime(e.getText());
+			f = new AnimaKai(id);
+			anime.addFansub(f);
 			animes.add(anime);
 		}
 	}
+
 	// Public methods
+	public AnimaKai() {
+		super("AnimaKai", "http://www.animakai.tv/");
+		setAnimePage("http://www.animakai.tv/anime/*/");
+		setListPage("http://www.animakai.tv/animes/*/");
+		setId("");
+	}
+
 	public AnimaKai(String id) {
-		super(id);
-		preparedLink = new PreparedLink("http://www.animakai.tv/anime/*/");
-		preparedLink.set(0, id);
+		super("AnimaKai", "http://www.animakai.tv/");
+		setAnimePage("http://www.animakai.tv/anime/*/");
+		setListPage("http://www.animakai.tv/animes/*/");
+		setId(id);
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public PreparedLink getAnimePage() {
+		this.animePage.set(0, getId());
+		return animePage;
+	}
+
+	public void setAnimePage(String animePage) {
+		this.animePage = new PreparedLink(animePage);
+	}
+
+	public void setAnimePage(PreparedLink animePage) {
+		this.animePage = animePage;
+	}
+
+	public void setListPage(String listPage) {
+		this.listPage = new PreparedLink(listPage);
+	}
+
+	public void setListPage(PreparedLink listPage) {
+		this.listPage = listPage;
+	}
+
+	public PreparedLink getListPage() {
+		return this.listPage;
+	}
+
+	public void setListPageIndex(String index) {
+		getListPage().set(0, index);
+	}
+
+	private static String parserURL(String url) {
+		String[] tmp = url.split("/");
+		return tmp[4];
 	}
 
 	@Override
 	public Episode getLastEpisode(Quality quality) {
 		WebDriver driver = new PhantomJSDriver();
-		driver.get(preparedLink.toString());
+		driver.get(getAnimePage().toString());
 		Episode ep = getLastEpisode(driver, quality);
 		removeProtectionLinks(ep, driver);
 		driver.close();
@@ -164,7 +223,7 @@ public class AnimaKai extends Fansub {
 	public List<Episode> getAllEpisodes(Quality quality) {
 		List<Episode> episodes = new ArrayList<Episode>();
 		WebDriver driver = new PhantomJSDriver();
-		driver.get(preparedLink.toString());
+		driver.get(getAnimePage().toString());
 		getByIndividualEpisode(episodes, quality, driver);
 		for (Episode e : episodes)
 			removeProtectionLinks(e, driver);
@@ -175,28 +234,32 @@ public class AnimaKai extends Fansub {
 	@Override
 	public Episode getEpisode(int number, Quality quality) {
 		WebDriver driver = new PhantomJSDriver();
-		driver.get(preparedLink.toString());
+		driver.get(getAnimePage().toString());
 		Episode ep = getSpecificEpisode(driver, quality, number);
 		removeProtectionLinks(ep, driver);
 		driver.close();
 		return ep;
 	}
 
-	public static List<Anime> getAllAnimes(){
+	public static List<Anime> getAllAnimes() {
 		ArrayList<Anime> animeList = new ArrayList<Anime>();
 		WebDriver driver = new PhantomJSDriver();
 		int page = 1;
 		List<WebElement> elements = null;
 		do {
-			try{
-				driver.get("http://www.animakai.tv/animes/"+(page++)+"/");
+			try {
+				driver.get("http://www.animakai.tv/animes/" + (page++) + "/");
 				elements = driver.findElements(By.className("sl_details "));
-				getAnimesFromPage(elements,animeList);
-			}catch(Exception e){
-				page --;
+				getAnimesFromPage(elements, animeList);
+			} catch (Exception e) {
+				page--;
 			}
-		}while(elements.size() > 0);
+		} while (elements.size() > 0);
 		driver.close();
 		return animeList;
+	}
+
+	public String toString() {
+		return getName() + ":" + getId();
 	}
 }

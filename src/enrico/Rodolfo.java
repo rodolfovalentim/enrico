@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import fansubs.PunchSub;
+import fansubs.VisionSub;
 
 public class Rodolfo {
 
@@ -11,9 +12,12 @@ public class Rodolfo {
 			IOException {
 
 		PunchSub p = new PunchSub();
-		ArrayList<Anime> animes = p.getAllAnimes();
+		// ArrayList<Anime> animes = p.getAllAnimes();
+		// ArrayList<Anime> animes1 = (ArrayList<Anime>)
+		// AnimaKai.getAllAnimes();
+		ArrayList<Anime> animes2 = (ArrayList<Anime>) VisionSub.getAllAnimes();
 
-		for (Anime a : animes)
+		for (Anime a : animes2)
 			System.out.println(a.toString());
 	}
 }

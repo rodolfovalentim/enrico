@@ -10345,3 +10345,21 @@ bfca10-2fd4-11e5-a243-136eb7cce90b] - CONSTRUCTOR - Negotiated Capabilities: {"b
 [INFO  - 2015-07-21T19:00:47.599Z] Session [cbf5fca0-2fda-11e5-b546-1170bce7562d] - CONSTRUCTOR - Desired Capabilities: {"platform":"ANY","browserName":"phantomjs","version":""}
 [INFO  - 2015-07-21T19:00:47.600Z] Session [cbf5fca0-2fda-11e5-b546-1170bce7562d] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2015-07-21T19:00:47.600Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: cbf5fca0-2fda-11e5-b546-1170bce7562d
+[INFO  - 2015-07-21T19:05:47.009Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:10:47.008Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:15:47.008Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:20:47.009Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:25:47.009Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:30:47.009Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:35:47.010Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:40:47.010Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:45:47.010Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:50:47.010Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:51:12.061Z] GhostDriver - Main - running on port 30002
+[INFO  - 2015-07-21T19:51:12.614Z] Session [d7031a40-2fe1-11e5-95ab-a759d3d4d74b] - CONSTRUCTOR - Desired Capabilities: {"platform":"ANY","browserName":"phantomjs","version":""}
+[INFO  - 2015-07-21T19:51:12.615Z] Session [d7031a40-2fe1-11e5-95ab-a759d3d4d74b] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-21T19:51:12.615Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d7031a40-2fe1-11e5-95ab-a759d3d4d74b
+[INFO  - 2015-07-21T19:53:46.298Z] GhostDriver - Main - running on port 12678
+[INFO  - 2015-07-21T19:53:46.868Z] Session [32f43e10-2fe2-11e5-8311-fdd856bbc0ff] - CONSTRUCTOR - Desired Capabilities: {"platform":"ANY","browserName":"phantomjs","version":""}
+[INFO  - 2015-07-21T19:53:46.868Z] Session [32f43e10-2fe2-11e5-8311-fdd856bbc0ff] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-21T19:53:46.868Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 32f43e10-2fe2-11e5-8311-fdd856bbc0ff

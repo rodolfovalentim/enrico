@@ -100,7 +100,6 @@ public class PunchSub extends Fansub {
 
 		if (numberOfPages > 0) {
 			setAnimePageIndex(String.valueOf(numberOfPages));
-
 			driver.get(getAnimePage().toString());
 			driver.navigate().refresh();
 
