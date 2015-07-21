@@ -163,4 +163,8 @@ public class Anime extends TVShow {
 		Anime anime = (Anime) obj;
 		return (this.id == anime.id);
 	}
+	
+	public void mergeFansubs(Anime anime){
+		this.fansubs.addAll(anime.fansubs);
+	}
 }
