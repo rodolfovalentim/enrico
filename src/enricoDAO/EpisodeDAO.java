@@ -2,6 +2,7 @@ package enricoDAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -35,26 +36,21 @@ public class EpisodeDAO {
 
 	public void insert(String tableName, Episode e) {
 		Connection c = null;
-		Statement stmt = null;
+		PreparedStatement stmt = null;
 		try {
 			Class.forName("org.sqlite.JDBC");
 			c = DriverManager.getConnection("jdbc:sqlite:enrico.db");
 			c.setAutoCommit(false);
 			System.out.println("Opened database successfully");
-			stmt = c.createStatement();
+			stmt = c.prepareStatement("INSERT INTO ? (ID, TITLE, QUALITY, MIRRORS) VALUES (?,?,?,?)");
 
-			String s = "ID, " + "TITLE, " + "QUALITY, " + "DATE, " + "MIRRORS";
+			stmt.setString(1, tableName);
+			stmt.setInt(2, e.getEpisode());
+			stmt.setString(3, e.getTitle());
+			stmt.setString(4, e.getQuality());
+			stmt.setString(5, e.getMirrorstoString());
 
-			String a = e.getEpisode() + ",'" + e.getTitle() + "', '"
-					+ e.getQuality() + "', '" + e.getExibitionDate() + "', '"
-					+ e.getMirrorstoString() + "'";
-
-			String sql = "INSERT INTO " + tableName + "(" + s + ") VALUES ("
-					+ a + ");";
-
-			System.out.println(a);
-
-			stmt.executeUpdate(sql);
+			stmt.executeUpdate();
 			stmt.close();
 			c.commit();
 			c.close();
@@ -65,13 +61,44 @@ public class EpisodeDAO {
 		System.out.println("Records created successfully");
 	}
 
+	public Episode getById(String tableName, int id) {
+
+		Episode ep = null;
+		Connection c = null;
+		Statement stmt = null;
+
+		try {
+			Class.forName("org.sqlite.JDBC");
+			c = DriverManager.getConnection("jdbc:sqlite:enrico.db");
+			c.setAutoCommit(false);
+			stmt = c.createStatement();
+			String sql = "SELECT * FROM ANIMES " + tableName + "WHERE ID = "
+					+ String.valueOf(id) + ";";
+			ResultSet rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				ep = new Episode(rs.getString("TITLE"), rs.getInt("ID"),
+						rs.getString("QUALITY"), rs.getString("MIRRORS"));
+			}
+
+			stmt.close();
+			c.commit();
+			c.close();
+			return ep;
+		} catch (Exception e) {
+			System.err.println(e.getClass().getName() + ": " + e.getMessage());
+			System.exit(0);
+		}
+		return ep;
+	}
+
 	public ArrayList<Episode> getAll(String tableName) {
 
 		ArrayList<Episode> episodes = new ArrayList<Episode>();
 		Episode ep = null;
 		Connection c = null;
 		Statement stmt = null;
-				
+
 		try {
 			Class.forName("org.sqlite.JDBC");
 			c = DriverManager.getConnection("jdbc:sqlite:enrico.db");

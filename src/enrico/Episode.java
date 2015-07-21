@@ -7,32 +7,20 @@ public class Episode {
 	String title;
 	int episode;
 	String quality;
-	java.util.Date exibitionDate;
 	ArrayList<Mirror> mirrors;
+
+	public Episode(String title, int episode, String quality) {
+		setTitle(title);
+		setQuality(quality);
+		setEpisode(episode);
+		setMirrors();
+	}
 
 	public Episode(String title, int episode, String quality, String mirrors) {
 		setTitle(title);
-		setExibitionDate(new java.util.Date());
 		setQuality(quality);
 		setEpisode(episode);
 		setMirrors(mirrors);
-	}
-	
-	public Episode(String title, int episode, String quality) {
-		setTitle(title);
-		setExibitionDate(new java.util.Date());
-		setQuality(quality);
-		setEpisode(episode);
-		setMirrors();
-	}
-
-	public Episode(String title, int episode, java.util.Date exibition,
-			String quality) {
-		setTitle(title);
-		setExibitionDate(exibition);
-		setQuality(quality);
-		setEpisode(episode);
-		setMirrors();
 	}
 
 	public void addMirror(String name, String link) {
@@ -41,8 +29,7 @@ public class Episode {
 	}
 
 	public String toString() {
-		String s = getTitle() + " " + getEpisode() + "\n" + exibitionDate
-				+ "\n";
+		String s = getTitle() + " " + getEpisode() + "\n";
 
 		ArrayList<Mirror> mirrors = getMirrors();
 
@@ -68,7 +55,7 @@ public class Episode {
 
 		return s;
 	}
-	
+
 	// Getters and Setters
 	public String getTitle() {
 		return title;
@@ -86,14 +73,6 @@ public class Episode {
 		this.episode = episode;
 	}
 
-	public java.util.Date getExibitionDate() {
-		return exibitionDate;
-	}
-
-	public void setExibitionDate(java.util.Date exibitionDate) {
-		this.exibitionDate = exibitionDate;
-	}
-
 	public String getQuality() {
 		return quality;
 	}
@@ -109,11 +88,10 @@ public class Episode {
 	public void setMirrors() {
 		this.mirrors = new ArrayList<Mirror>();
 	}
-	
+
 	public void setMirrors(String mirrors) {
 		this.mirrors = new ArrayList<Mirror>();
 	}
-
 
 	// Overrided Methods
 	@Override

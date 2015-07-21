@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class AnimeDAO {
 
-	public static void createTable() {
+	public void createTable() {
 		Connection c = null;
 		Statement stmt = null;
 		try {
@@ -14,7 +14,7 @@ public class AnimeDAO {
 
 			stmt = c.createStatement();
 			String sql = "CREATE TABLE IF NOT EXISTS ANIMES ("
-					+ " ID 			   INTEGER 	    PRIMARY KEY  NOT NULL,"
+					+ " ID  INTEGER   PRIMARY KEY   AUTOINCREMENT,"
 					+ " NAME           TEXT		                 NOT NULL,"
 					+ " SINOPSE        TEXT," + " YEAR           TEXT,"
 					+ " FANSUBS        TEXT," + " TABLEEPISODES  TEXT,"
@@ -30,24 +30,22 @@ public class AnimeDAO {
 
 	public void insert(Anime anime) {
 		Connection c = null;
-		Statement stmt = null;
+		PreparedStatement stmt = null;
 		try {
 			Class.forName("org.sqlite.JDBC");
 			c = DriverManager.getConnection("jdbc:sqlite:enrico.db");
 			c.setAutoCommit(false);
-			stmt = c.createStatement();
+			stmt = c.prepareStatement("INSERT INTO ANIMES (NAME, SINOPSE, YEAR, FANSUBS, STATUS, TABLEEPISODES) "
+					+ "VALUES (?,?,?,?,?,?);");
 
-			String s = "ID, " + "NAME, " + "SINOPSE, " + "YEAR, " + "FANSUBS, "
-					+ "STATUS";
+			stmt.setString(1, anime.getName());
+			stmt.setString(2, anime.getSinopse());
+			stmt.setString(3, anime.getYear());
+			stmt.setString(4, anime.getFansubtoString());
+			stmt.setString(5, anime.getStatus());
+			stmt.setString(6, anime.getName().replace(" ", "").toUpperCase());
 
-			String a = "'" + anime.getName() + "', '" + anime.getSinopse()
-					+ "', '" + anime.getYear() + "', '"
-					+ anime.getFansubtoString() + "', '" + anime.getStatus()
-					+ "'";
-
-			String sql = "INSERT INTO ANIMES (" + s + ") VALUES (" + a + ");";
-
-			stmt.executeUpdate(sql);
+			stmt.executeUpdate();
 			stmt.close();
 			c.commit();
 			c.close();
@@ -71,9 +69,9 @@ public class AnimeDAO {
 
 			while (rs.next()) {
 				a = new Anime(rs.getString("NAME"), rs.getString("SINOPSE"),
-						rs.getString("YEAR"), rs.getInt("ID"),
-						rs.getString("FANSUBS"), rs.getString("TABLEEPISODES"),
-						rs.getString("STATUS"));
+						rs.getString("YEAR"), rs.getString("FANSUBS"),
+						rs.getString("TABLEEPISODES"), rs.getString("STATUS"),
+						rs.getInt("ID"));
 			}
 
 			stmt.close();
@@ -102,9 +100,9 @@ public class AnimeDAO {
 
 			while (rs.next()) {
 				a = new Anime(rs.getString("NAME"), rs.getString("SINOPSE"),
-						rs.getString("YEAR"), rs.getInt("ID"),
-						rs.getString("FANSUBS"), rs.getString("TABLEEPISODES"),
-						rs.getString("STATUS"));
+						rs.getString("YEAR"), rs.getString("FANSUBS"),
+						rs.getString("TABLEEPISODES"), rs.getString("STATUS"),
+						rs.getInt("ID"));
 			}
 
 			stmt.close();
@@ -117,7 +115,7 @@ public class AnimeDAO {
 		}
 		return a;
 	}
-	
+
 	public Anime getAll(String id) {
 		Anime a = null;
 		Connection c = null;
@@ -133,9 +131,9 @@ public class AnimeDAO {
 
 			while (rs.next()) {
 				a = new Anime(rs.getString("NAME"), rs.getString("SINOPSE"),
-						rs.getString("YEAR"), rs.getInt("ID"),
-						rs.getString("FANSUBS"), rs.getString("TABLEEPISODES"),
-						rs.getString("STATUS"));
+						rs.getString("YEAR"), rs.getString("FANSUBS"),
+						rs.getString("TABLEEPISODES"), rs.getString("STATUS"),
+						rs.getInt("ID"));
 			}
 
 			stmt.close();
