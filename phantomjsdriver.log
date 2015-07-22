@@ -10364,3 +10364,103 @@ bfca10-2fd4-11e5-a243-136eb7cce90b] - CONSTRUCTOR - Negotiated Capabilities: {"b
 [INFO  - 2015-07-21T19:53:46.868Z] Session [32f43e10-2fe2-11e5-8311-fdd856bbc0ff] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2015-07-21T19:53:46.868Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 32f43e10-2fe2-11e5-8311-fdd856bbc0ff
 [INFO  - 2015-07-21T19:55:47.011Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:56:12.160Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:56:12.161Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session 'd7031a40-2fe1-11e5-95ab-a759d3d4d74b', because windowless
+[INFO  - 2015-07-21T19:58:46.394Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T19:58:46.396Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '32f43e10-2fe2-11e5-8311-fdd856bbc0ff', because windowless
+[INFO  - 2015-07-21T20:00:47.011Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T20:05:47.029Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T20:10:47.029Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T20:15:47.040Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T20:20:47.059Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T20:25:47.077Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T20:30:47.091Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T20:35:47.109Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T20:40:47.125Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T20:45:47.125Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T20:50:47.134Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T20:55:47.149Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:00:47.161Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:05:47.174Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:10:47.190Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:15:47.201Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:20:47.212Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:25:47.227Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:30:47.232Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:35:47.246Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:40:47.256Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:45:47.271Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:50:47.282Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T21:55:47.296Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:00:47.307Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:05:47.320Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:10:47.332Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:15:47.341Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:20:47.354Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:25:47.363Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:30:47.368Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:35:47.380Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:40:47.390Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:45:47.400Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:50:47.401Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T22:55:47.402Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:00:47.413Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:05:47.424Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:10:47.431Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:15:47.439Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:20:47.449Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:25:47.459Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:30:47.469Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:35:47.476Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:40:47.483Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:45:47.492Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:50:47.501Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-21T23:55:47.506Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:00:47.511Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:05:47.515Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:10:47.523Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:15:47.528Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:20:47.535Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:25:47.542Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:30:47.549Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:35:47.556Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:40:47.562Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:45:47.567Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:50:47.572Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T00:55:47.577Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T01:00:47.582Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T02:22:00.572Z] GhostDriver - Main - running on port 3647
+[INFO  - 2015-07-22T02:22:01.015Z] GhostDriver - Main - running on port 27293
+[INFO  - 2015-07-22T02:22:01.151Z] Session [6f6d98b0-3018-11e5-90f6-996a601e6e56] - CONSTRUCTOR - Desired Capabilities: {"platform":"ANY","browserName":"phantomjs","version":""}
+[INFO  - 2015-07-22T02:22:01.151Z] Session [6f6d98b0-3018-11e5-90f6-996a601e6e56] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-22T02:22:01.152Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 6f6d98b0-3018-11e5-90f6-996a601e6e56
+[INFO  - 2015-07-22T02:22:01.555Z] Session [6fab6500-3018-11e5-b4c4-e7853c7a0cfe] - CONSTRUCTOR - Desired Capabilities: {"platform":"ANY","browserName":"phantomjs","version":""}
+[INFO  - 2015-07-22T02:22:01.555Z] Session [6fab6500-3018-11e5-b4c4-e7853c7a0cfe] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-22T02:22:01.555Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 6fab6500-3018-11e5-b4c4-e7853c7a0cfe
+[INFO  - 2015-07-22T02:22:06.000Z] GhostDriver - Main - running on port 1688
+[INFO  - 2015-07-22T02:22:06.634Z] Session [72b21550-3018-11e5-a9ee-efd5013bbf56] - CONSTRUCTOR - Desired Capabilities: {"platform":"ANY","browserName":"phantomjs","version":""}
+[INFO  - 2015-07-22T02:22:06.634Z] Session [72b21550-3018-11e5-a9ee-efd5013bbf56] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-22T02:22:06.635Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 72b21550-3018-11e5-a9ee-efd5013bbf56
+[INFO  - 2015-07-22T02:22:20.436Z] GhostDriver - Main - running on port 30417
+[INFO  - 2015-07-22T02:22:21.057Z] Session [7b4b29e0-3018-11e5-ba78-f3d90cd4ecf0] - CONSTRUCTOR - Desired Capabilities: {"platform":"ANY","browserName":"phantomjs","version":""}
+[INFO  - 2015-07-22T02:22:21.058Z] Session [7b4b29e0-3018-11e5-ba78-f3d90cd4ecf0] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-22T02:22:21.058Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 7b4b29e0-3018-11e5-ba78-f3d90cd4ecf0
+[INFO  - 2015-07-22T02:22:55.674Z] GhostDriver - Main - running on port 29990
+[INFO  - 2015-07-22T02:22:56.150Z] GhostDriver - Main - running on port 7409
+[INFO  - 2015-07-22T02:22:56.199Z] Session [903d8f50-3018-11e5-8eec-3788e45fa153] - CONSTRUCTOR - Desired Capabilities: {"platform":"ANY","browserName":"phantomjs","version":""}
+[INFO  - 2015-07-22T02:22:56.199Z] Session [903d8f50-3018-11e5-8eec-3788e45fa153] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-22T02:22:56.199Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 903d8f50-3018-11e5-8eec-3788e45fa153
+[INFO  - 2015-07-22T02:22:56.719Z] Session [908c99b0-3018-11e5-8169-ab322365793a] - CONSTRUCTOR - Desired Capabilities: {"platform":"ANY","browserName":"phantomjs","version":""}
+[INFO  - 2015-07-22T02:22:56.720Z] Session [908c99b0-3018-11e5-8169-ab322365793a] - CONSTRUCTOR - Negotiated Capabilities: {"browserName":"phantomjs","version":"1.9.0","driverName":"ghostdriver","driverVersion":"1.0.3","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-07-22T02:22:56.721Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 908c99b0-3018-11e5-8169-ab322365793a
+[INFO  - 2015-07-22T02:27:00.668Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T02:27:00.669Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '6f6d98b0-3018-11e5-90f6-996a601e6e56', because windowless
+[INFO  - 2015-07-22T02:27:01.096Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T02:27:01.098Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '6fab6500-3018-11e5-b4c4-e7853c7a0cfe', because windowless
+[INFO  - 2015-07-22T02:27:06.097Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T02:27:06.099Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '72b21550-3018-11e5-a9ee-efd5013bbf56', because windowless
+[INFO  - 2015-07-22T02:27:20.535Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T02:27:20.535Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '7b4b29e0-3018-11e5-ba78-f3d90cd4ecf0', because windowless
+[INFO  - 2015-07-22T02:27:55.675Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T02:27:56.223Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2015-07-22T02:27:56.224Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '908c99b0-3018-11e5-8169-ab322365793a', because windowless

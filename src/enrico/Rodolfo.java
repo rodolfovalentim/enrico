@@ -3,7 +3,6 @@ package enrico;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import fansubs.PunchSub;
 import fansubs.VisionSub;
 
 public class Rodolfo {
@@ -11,7 +10,7 @@ public class Rodolfo {
 	public static void main(String[] args) throws InterruptedException,
 			IOException {
 
-		PunchSub p = new PunchSub();
+		//PunchSub p = new PunchSub();
 		// ArrayList<Anime> animes = p.getAllAnimes();
 		// ArrayList<Anime> animes1 = (ArrayList<Anime>)
 		// AnimaKai.getAllAnimes();
