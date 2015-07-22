@@ -1,22 +1,22 @@
 package enrico;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import fansubs.VisionSub;
+import databaseapi.AnimePlanet;
 
 public class Rodolfo {
 
-	public static void main(String[] args) throws InterruptedException,
-			IOException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 
-		//PunchSub p = new PunchSub();
-		// ArrayList<Anime> animes = p.getAllAnimes();
-		// ArrayList<Anime> animes1 = (ArrayList<Anime>)
-		// AnimaKai.getAllAnimes();
-		ArrayList<Anime> animes2 = (ArrayList<Anime>) VisionSub.getAllAnimes();
+		long startTime;
+		long stopTime;
+		AnimePlanet imdb = new AnimePlanet();
 
-		for (Anime a : animes2)
-			System.out.println(a.toString());
+		imdb.setTitle("Yuru Yuri 2");
+		startTime = System.currentTimeMillis();
+		imdb.search();
+		stopTime = System.currentTimeMillis();
+		System.out.println("Execution Time 1: " + (stopTime - startTime));
+
 	}
 }
