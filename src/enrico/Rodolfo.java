@@ -1,7 +1,8 @@
 package enrico;
 
 import java.io.IOException;
-import databaseapi.IMDB;
+
+import databaseapi.AnimePlanet;
 
 public class Rodolfo {
 
@@ -9,10 +10,9 @@ public class Rodolfo {
 
 		long startTime;
 		long stopTime;
-		IMDB imdb = new IMDB();
+		AnimePlanet imdb = new AnimePlanet();
 
-		imdb.setTitle("Berserk");
-		imdb.enableExactSearch(true);
+		imdb.setTitle("Yuru Yuri 2");
 		startTime = System.currentTimeMillis();
 		imdb.search();
 		stopTime = System.currentTimeMillis();

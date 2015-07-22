@@ -18,13 +18,13 @@ public class AnimePlanet {
 	private TVShow show;
 
 	public AnimePlanet() {
-		setSearchQuery("http://www.anime-planet.com/anime/all?name=*&include_types=5");
+		setSearchQuery("http://www.anime-planet.com/anime/all?name=*&include_types=6");
 		setTitle("");
 		setInfoPage("");
 	}
 
 	public AnimePlanet(String title) {
-		setSearchQuery("http://www.anime-planet.com/anime/all?name=*&include_types=5");
+		setSearchQuery("http://www.anime-planet.com/anime/all?name=*&include_types=6");
 		setTitle(title);
 	}
 
@@ -65,9 +65,9 @@ public class AnimePlanet {
 
 		try {
 			doc = Jsoup.connect(getInfoPage()).get();
-			Element title = doc.select("span[itemprop = name]").first();
-			Element year = doc.getElementsByClass("nobr").first();
-			Element description = doc.select("p[itemprop = description]").first();
+			Element title = doc.select("div[itemprop = name]").first();
+			Element year = doc.getElementsByClass("iconYear").first();
+			Element description = doc.select("div[itemprop = description]").first();
 			Matcher m = p.matcher(year.text());
 
 			if (m.matches())
@@ -87,11 +87,37 @@ public class AnimePlanet {
 
 	public boolean search() {
 		Document doc;
+		Element name = null;
+		Element description = null;
+		Element year = null;
+
 		try {
-			doc = Jsoup.connect(getSearchQuery()).get();
-			Element result = doc.getElementsByClass("result_text").first();
-			setInfoPage(result.child(0).attr("abs:href"));
-			setShow();
+			doc = Jsoup.connect(getSearchQuery())
+					.userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0").get();
+
+			if (doc.title().contains("Browse All Anime")) {
+				Element result = doc.getElementsByClass("card").first().child(0);
+				Document alt = Jsoup.parse(result.attr("title"));
+
+				name = alt.getElementsByTag("h5").first();
+				description = alt.getElementsByTag("p").first();
+				year = alt.getElementsByClass("iconYear").first();
+
+			} else {
+				name = doc.select("h1[itemprop = name").first();
+				description = doc.select("div[itemprop = description").first();
+				year = doc.select("span[class = iconYear]").first();
+
+			}
+			
+			if(name != null)
+				System.out.println(name.text());
+			if(description != null)
+				System.out.println(description.text());
+			if(year != null)
+				System.out.println(year.text());
+			// setInfoPage(result.child(0).attr("abs:href"));
+			// setShow();
 			return true;
 		} catch (IOException e) {
 			e.printStackTrace();
