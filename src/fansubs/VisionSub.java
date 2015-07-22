@@ -202,6 +202,7 @@ public class VisionSub extends Fansub {
 		List<WebElement> elements = null;
 		do {
 			try {
+				System.out.println("http://www.visionfansub.com.br/episodios/pagina/" + (page) + "/");
 				driver.get("http://www.visionfansub.com.br/episodios/pagina/"
 						+ (page++) + "/");
 				elements = driver.findElement(By.id("area_conteudo_site"))
