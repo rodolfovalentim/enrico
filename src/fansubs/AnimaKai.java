@@ -248,6 +248,7 @@ public class AnimaKai extends Fansub {
 		List<WebElement> elements = null;
 		do {
 			try {
+				System.out.println("http://www.animakai.tv/animes/" + (page) + "/");
 				driver.get("http://www.animakai.tv/animes/" + (page++) + "/");
 				elements = driver.findElements(By.className("sl_details "));
 				getAnimesFromPage(elements, animeList);

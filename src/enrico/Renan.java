@@ -1,33 +1,55 @@
 package enrico;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import enricoDAO.AnimeDAO;
 import fansubs.AnimaKai;
+import fansubs.PunchSub;
 import fansubs.VisionSub;
 
 public class Renan {
 
-	public static void main(String[] args) {
-		List<Anime> animaKaiAnimes = AnimaKai.getAllAnimes();
-		List<Anime> visionSubAnimes = VisionSub.getAllAnimes();
+	public static void mergeList(List<Anime> l1,List<Anime> l2){
+		List<Anime> animes = new ArrayList<Anime>();
+		double highestSimilarity;		
 
-		double highestSimilarity;
-		Anime similar = null;
-
-		for (Anime va : visionSubAnimes) {
+		for (Anime va : l2) {
+			Anime similar = null;
 			highestSimilarity = 0;
-			System.out.print(va.name + " : ");
-			for (Anime aka : animaKaiAnimes) {
+			for (Anime aka : l1) {
 				double sim = StringSimilarity.similarity(aka.name, va.name);
-				if (sim > highestSimilarity && sim > 0.78) {
+				if (sim > highestSimilarity && sim > 0.68) {
 					highestSimilarity = sim;
 					similar = aka;
 				}
 			}
-			if (similar!=null)
+			if (similar != null)
 				similar.mergeFansubs(va);
+			else
+				animes.add(va);
 		}
-		System.out.println(animaKaiAnimes);
+
+		l1.addAll(animes);
+		
+	}
+	
+	public static void main(String[] args) {
+
+		PunchSub p = new PunchSub();
+		ArrayList<Anime> punchAnimes = p.getAllAnimes();
+		List<Anime> animaKaiAnimes = AnimaKai.getAllAnimes();
+		List<Anime> visionSubAnimes = VisionSub.getAllAnimes();
+
+		mergeList(animaKaiAnimes,visionSubAnimes);
+		mergeList(animaKaiAnimes, punchAnimes);
+		
+		AnimeDAO adao = new AnimeDAO();
+		for (Anime a : animaKaiAnimes){
+			adao.insert(a);
+			System.out.println(a.toString());
+		}
+			
 	}
 
 }
