@@ -42,7 +42,7 @@ public class EpisodeDAO {
 			c = DriverManager.getConnection("jdbc:sqlite:enrico.db");
 			c.setAutoCommit(false);
 			System.out.println("Opened database successfully");
-			stmt = c.prepareStatement("INSERT INTO ? (ID, TITLE, QUALITY, MIRRORS) VALUES (?,?,?,?)");
+			stmt = c.prepareStatement("INSERT INTO ? (NUMBER, TITLE, QUALITY, MIRRORS) VALUES (?,?,?,?)");
 
 			stmt.setString(1, tableName);
 			stmt.setInt(2, e.getEpisode());

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import databaseapi.Hummingbird;
+import enricoDAO.AnimeDAO;
 
 public class Renan {
 
@@ -32,6 +33,8 @@ public class Renan {
 	}
 	
 	public static void main(String[] args) {
+		AnimeDAO dao = new AnimeDAO();
+		for(Anime a : dao.getAll(id))
 		Hummingbird db = new Hummingbird("Berserk");
 		System.out.println(db.getInfoPage());
 		//db.searchSoup();

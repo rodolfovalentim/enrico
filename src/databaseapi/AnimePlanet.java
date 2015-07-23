@@ -96,12 +96,16 @@ public class AnimePlanet {
 					.userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0").get();
 
 			if (doc.title().contains("Browse All Anime")) {
+				if (doc.getElementsByClass("error").size() > 0){
+					System.out.println(getTitle() + ": No results found");
+					return false;
+				}
+				
 				Element result = doc.getElementsByClass("card").first().child(0);
 				Document alt = Jsoup.parse(result.attr("title"));
-
 				name = alt.getElementsByTag("h5").first();
 				description = alt.getElementsByTag("p").first();
-				year = alt.getElementsByClass("iconYear").first();
+				year = alt.getElementsByClass("iconYear").first();				
 
 			} else {
 				name = doc.select("h1[itemprop = name").first();
@@ -111,7 +115,7 @@ public class AnimePlanet {
 			}
 			
 			if(name != null)
-				System.out.println(name.text());
+				System.out.println("Procurando: " + getTitle() + " Achou :" + name.text());
 			if(description != null)
 				System.out.println(description.text());
 			if(year != null)
@@ -120,7 +124,7 @@ public class AnimePlanet {
 			// setShow();
 			return true;
 		} catch (IOException e) {
-			e.printStackTrace();
+			search();
 			return false;
 		}
 	}

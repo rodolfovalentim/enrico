@@ -2,6 +2,7 @@ package enricoDAO;
 
 import enrico.Anime;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class AnimeDAO {
 
@@ -13,11 +14,9 @@ public class AnimeDAO {
 			c = DriverManager.getConnection("jdbc:sqlite:enrico.db");
 
 			stmt = c.createStatement();
-			String sql = "CREATE TABLE IF NOT EXISTS ANIMES ("
-					+ " ID  INTEGER   PRIMARY KEY   AUTOINCREMENT,"
-					+ " NAME           TEXT		                 NOT NULL,"
-					+ " SINOPSE        TEXT," + " YEAR           TEXT,"
-					+ " FANSUBS        TEXT," + " TABLEEPISODES  TEXT,"
+			String sql = "CREATE TABLE IF NOT EXISTS ANIMES (" + " ID  INTEGER   PRIMARY KEY   AUTOINCREMENT,"
+					+ " NAME           TEXT		                 NOT NULL," + " SINOPSE        TEXT,"
+					+ " YEAR           TEXT," + " FANSUBS        TEXT," + " TABLEEPISODES  TEXT,"
 					+ " STATUS         TEXT)";
 			stmt.executeUpdate(sql);
 			stmt.close();
@@ -68,9 +67,8 @@ public class AnimeDAO {
 			ResultSet rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
-				a = new Anime(rs.getString("NAME"), rs.getString("SINOPSE"),
-						rs.getString("YEAR"), rs.getString("FANSUBS"),
-						rs.getString("TABLEEPISODES"), rs.getString("STATUS"),
+				a = new Anime(rs.getString("NAME"), rs.getString("SINOPSE"), rs.getString("YEAR"),
+						rs.getString("FANSUBS"), rs.getString("TABLEEPISODES"), rs.getString("STATUS"),
 						rs.getInt("ID"));
 			}
 
@@ -94,14 +92,12 @@ public class AnimeDAO {
 			c = DriverManager.getConnection("jdbc:sqlite:enrico.db");
 			c.setAutoCommit(false);
 			stmt = c.createStatement();
-			String sql = "SELECT * FROM ANIMES WHERE ID = '" + id.toString()
-					+ "';";
+			String sql = "SELECT * FROM ANIMES WHERE ID = '" + id.toString() + "';";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
-				a = new Anime(rs.getString("NAME"), rs.getString("SINOPSE"),
-						rs.getString("YEAR"), rs.getString("FANSUBS"),
-						rs.getString("TABLEEPISODES"), rs.getString("STATUS"),
+				a = new Anime(rs.getString("NAME"), rs.getString("SINOPSE"), rs.getString("YEAR"),
+						rs.getString("FANSUBS"), rs.getString("TABLEEPISODES"), rs.getString("STATUS"),
 						rs.getInt("ID"));
 			}
 
@@ -116,7 +112,8 @@ public class AnimeDAO {
 		return a;
 	}
 
-	public Anime getAll(String id) {
+	public ArrayList<Anime> getAll() {
+		ArrayList<Anime> animes = new ArrayList<Anime>();
 		Anime a = null;
 		Connection c = null;
 		Statement stmt = null;
@@ -125,25 +122,24 @@ public class AnimeDAO {
 			c = DriverManager.getConnection("jdbc:sqlite:enrico.db");
 			c.setAutoCommit(false);
 			stmt = c.createStatement();
-			String sql = "SELECT * FROM ANIMES WHERE ID = '" + id.toString()
-					+ "';";
+			String sql = "SELECT * FROM ANIMES;";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
-				a = new Anime(rs.getString("NAME"), rs.getString("SINOPSE"),
-						rs.getString("YEAR"), rs.getString("FANSUBS"),
-						rs.getString("TABLEEPISODES"), rs.getString("STATUS"),
+				a = new Anime(rs.getString("NAME"), rs.getString("SINOPSE"), rs.getString("YEAR"),
+						rs.getString("FANSUBS"), rs.getString("TABLEEPISODES"), rs.getString("STATUS"),
 						rs.getInt("ID"));
-			}
 
+				animes.add(a);
+			}
 			stmt.close();
 			c.commit();
 			c.close();
-			return a;
+			return animes;
 		} catch (Exception e) {
 			System.err.println(e.getClass().getName() + ": " + e.getMessage());
 			System.exit(0);
 		}
-		return a;
+		return animes;
 	}
 }
