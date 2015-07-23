@@ -3,10 +3,7 @@ package enrico;
 import java.util.ArrayList;
 import java.util.List;
 
-import enricoDAO.AnimeDAO;
-import fansubs.AnimaKai;
-import fansubs.PunchSub;
-import fansubs.VisionSub;
+import databaseapi.Hummingbird;
 
 public class Renan {
 
@@ -35,21 +32,10 @@ public class Renan {
 	}
 	
 	public static void main(String[] args) {
-
-		PunchSub p = new PunchSub();
-		ArrayList<Anime> punchAnimes = p.getAllAnimes();
-		List<Anime> animaKaiAnimes = AnimaKai.getAllAnimes();
-		List<Anime> visionSubAnimes = VisionSub.getAllAnimes();
-
-		mergeList(animaKaiAnimes,visionSubAnimes);
-		mergeList(animaKaiAnimes, punchAnimes);
-		
-		AnimeDAO adao = new AnimeDAO();
-		for (Anime a : animaKaiAnimes){
-			adao.insert(a);
-			System.out.println(a.toString());
-		}
-			
+		Hummingbird db = new Hummingbird("Berserk");
+		System.out.println(db.getInfoPage());
+		//db.searchSoup();
 	}
+	
 
 }

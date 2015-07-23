@@ -79,6 +79,7 @@ public class Anime extends TVShow {
 		this.id = id;
 	}
 
+<<<<<<< HEAD
 	public void setId(String name) {
 		WebDriver driver = new PhantomJSDriver();
 		name.replaceAll("\\s", "+");
@@ -102,6 +103,8 @@ public class Anime extends TVShow {
 		this.id = out;
 	}
 
+=======
+>>>>>>> d4537d62f04e4dc9a971dd3e355e332c5b9734a5
 	public ArrayList<Fansub> getFansubs() {
 		return fansubs;
 	}
