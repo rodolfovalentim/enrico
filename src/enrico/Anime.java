@@ -28,8 +28,8 @@ public class Anime extends TVShow {
 		setFansubs();
 	}
 
-	public Anime(String name, String sinopse, String year, String fansubs,
-			String tableEpisodes, String status, int id) {
+	public Anime(String name, String sinopse, String year, String fansubs, String tableEpisodes, String status,
+			int id) {
 		super(name, sinopse, year, status);
 		setId(id);
 		setEpisodes(tableEpisodes);
@@ -63,7 +63,6 @@ public class Anime extends TVShow {
 	public String getFansubtoString() {
 		String s = "";
 		ArrayList<Fansub> fansubs = getFansubs();
-
 		if (fansubs != null) {
 			for (Fansub f : fansubs) {
 				s = s + f.toString() + ",";
@@ -83,16 +82,15 @@ public class Anime extends TVShow {
 	public void setId(String name) {
 		WebDriver driver = new PhantomJSDriver();
 		name.replaceAll("\\s", "+");
-		driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search="
-				+ name);
+		driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search=" + name);
 
 		int out = -1;
 
 		try {
 			out = Integer.valueOf(driver.getCurrentUrl().split("=")[2]);
 		} catch (java.lang.NumberFormatException e) {
-			driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search="
-					+ "\"" + name + "\"");
+			driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search=" + "\""
+					+ name + "\"");
 			try {
 				out = Integer.valueOf(driver.getCurrentUrl().split("=")[2]);
 			} catch (java.lang.NumberFormatException e2) {
@@ -117,7 +115,6 @@ public class Anime extends TVShow {
 	}
 
 	public void setFansubs(String fansubs) {
-
 		ArrayList<Fansub> f = new ArrayList<Fansub>();
 		String[] tokies = fansubs.split(",");
 		String[] fansubcode = null;
@@ -126,11 +123,12 @@ public class Anime extends TVShow {
 			fansubcode = s.split(":");
 			if (fansubcode[0].equals("PunchSub"))
 				f.add(new PunchSub(fansubcode[1]));
-			// else if(fansubcode[0].equals("AnimaKai"))
-			// f.add(new AnimaKai(fansubcode[1]));
-			// else if(fansubcode[0].equals("VisionSub"))
-			// f.add(new VisionSub(fansubcode[1]));
+			else if (fansubcode[0].equals("AnimaKai"))
+				f.add(new AnimaKai(fansubcode[1]));
+			else if (fansubcode[0].equals("VisionSub"))
+				f.add(new VisionSub(fansubcode[1]));
 		}
+		setFansubs(f);
 	}
 
 	public ArrayList<Episode> getEpisodes() {
@@ -138,8 +136,8 @@ public class Anime extends TVShow {
 	}
 
 	public void setEpisodes(String tableEpisodes) {
-		EpisodeDAO e = new EpisodeDAO();
-		setEpisodes(e.getAll(tableEpisodes));
+		// EpisodeDAO e = new EpisodeDAO();
+		// setEpisodes(e.getAll(tableEpisodes));
 	}
 
 	public void setEpisodes() {
@@ -163,8 +161,8 @@ public class Anime extends TVShow {
 		Anime anime = (Anime) obj;
 		return (this.id == anime.id);
 	}
-	
-	public void mergeFansubs(Anime anime){
+
+	public void mergeFansubs(Anime anime) {
 		this.fansubs.addAll(anime.fansubs);
 	}
 }
