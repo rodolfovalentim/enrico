@@ -88,7 +88,7 @@ public class Renan {
 		driver = new HtmlUnitDriver();
 		DriverManager.newDriver(driver);
 		DriverManager.free(driver);
-		/*
+
 		List<Episode> episodes = new ArrayList<Episode>();
 		for (Fansub f : toDownload.getFansubs()){
 			List<Episode> episodes2 = f.getAllEpisodes(Quality.HD);
@@ -116,11 +116,6 @@ public class Renan {
 				}
 			}
 		}
-		*/
-		
-		DownloadLink dl = DownloadLink.create("http://www.visionshare.com.br/3/VisionFansub-Hajime-no-Ippo-Rising-24-FULLHD.mp4");
-		dl.download("C:\\Users\\renan_000\\Videos\\Animes\\Hajime no Ippo Rising\\");
-		
 		
 		driver = DriverManager.getDriver();
 		driver.close();

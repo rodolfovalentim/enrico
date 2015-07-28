@@ -5,7 +5,8 @@ import java.net.URLDecoder;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import enrico.DriverManager;
 import enrico.DriverManager.DriverType;
@@ -21,10 +22,11 @@ public class DirectVision extends DownloadLink {
 	public void download(String path) {
 		WebDriver driver = DriverManager.getDriver(DriverType.PHANTOMJS);
 		driver.get(link);
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.className("download"), "DOWNLOAD 1"));
 		String output = driver.findElement(By.className("download")).getAttribute("href");
 		DriverManager.free(driver);
 		try {
-			System.out.println(output);
 			download (output, path, URLDecoder.decode(output.split("/")[output.split("/").length-1],"UTF-8"));
 		} catch (IOException e) {
 			e.printStackTrace();
