@@ -45,21 +45,6 @@ public class Anime extends TVShow {
 		getFansubs().add(f);
 	}
 
-	public static ArrayList<String> search(String searchString) {
-		ArrayList<String> links = new ArrayList<String>();
-		WebDriver driver = new PhantomJSDriver();
-		driver.get("http://punchsub.net/#lista-de-animes/nome/todos/1");
-		WebElement searchField = driver.findElement(By.id("buscaProjeto"));
-		searchField.clear();
-		searchField.sendKeys(searchString);
-		searchField.submit();
-		for (WebElement e : driver.findElements(By.className("pNome"))) {
-			links.add(e.findElement(By.className("ajax")).getAttribute("href"));
-		}
-		driver.close();
-		return links;
-	}
-
 	public String getFansubtoString() {
 		String s = "";
 		ArrayList<Fansub> fansubs = getFansubs();
@@ -79,32 +64,6 @@ public class Anime extends TVShow {
 		this.id = id;
 	}
 
-<<<<<<< HEAD
-=======
-	public void setId(String name) {
-		WebDriver driver = new PhantomJSDriver();
-		name.replaceAll("\\s", "+");
-		driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search=" + name);
-
-		int out = -1;
-
-		try {
-			out = Integer.valueOf(driver.getCurrentUrl().split("=")[2]);
-		} catch (java.lang.NumberFormatException e) {
-			driver.get("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search=" + "\""
-					+ name + "\"");
-			try {
-				out = Integer.valueOf(driver.getCurrentUrl().split("=")[2]);
-			} catch (java.lang.NumberFormatException e2) {
-
-			}
-		}
-		driver.close();
-
-		this.id = out;
-	}
-
->>>>>>> 040076a72da423754bbd4c23ba18b29733ab8e3b
 	public ArrayList<Fansub> getFansubs() {
 		return fansubs;
 	}

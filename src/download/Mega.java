@@ -24,7 +24,7 @@ public class Mega extends DownloadLink {
 	public void download(String path) {
 		MegaHandler mh = new MegaHandler("00@gmail.com","1234");
 		try {
-			mh.download("https://mega.co.nz/#!vkp0CCBS!ksUTWoCJn-Uvd1G0r5b7TXjeN9DZwKVojFz6J7lXX_8", path);
+			mh.download(link, path);
 		} catch (InvalidKeyException | NoSuchPaddingException | InvalidAlgorithmParameterException
 				| NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | IOException
 				| JSONException e) {

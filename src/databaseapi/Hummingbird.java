@@ -7,14 +7,14 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.gargoylesoftware.htmlunit.BrowserVersion;
-
 import enrico.Anime;
+import enrico.DriverManager;
 import enrico.TVShow;
 import linkapi.PreparedLink;
 
@@ -64,17 +64,23 @@ public class Hummingbird {
 	}
 	
 	public boolean search() {
-		HtmlUnitDriver driver = new HtmlUnitDriver(BrowserVersion.CHROME);
-		driver.setJavascriptEnabled(true);		
+		WebDriver driver = DriverManager.getDriver();	
 		driver.get(searchQuery.toString());
-		WebElement element = driver.findElement(By.cssSelector(".search-container-results"));
+		WebElement element = (new WebDriverWait(driver, 5000)) //added this line
+			    .until(ExpectedConditions.presenceOfElementLocated(By.className("search-container-results")));
+		if (element == null){
+			infoPage = "";
+			tvShow = null;
+			DriverManager.free(driver);
+			return false;
+		}
 		WebElement elem=(new WebDriverWait(driver, 5000)) //added this line
 			    .until(ExpectedConditions.presenceOfElementLocated(By.className("search-result-image")));
 		List <WebElement>elements = element.findElements(By.className("ember-view"));
 		if(elements.size()==0){
 			infoPage = "";
 			tvShow = null;
-			driver.close();
+			DriverManager.free(driver);
 			return false;
 		}else{
 			infoPage = elements.get(0).getAttribute("href");
@@ -82,7 +88,7 @@ public class Hummingbird {
 			String[] details = sinopse.split("\n");
 			title = details[0];
 			tvShow = new Anime(details[0], details[1], "unknown", "unknown");
-			driver.close();
+			DriverManager.free(driver);
 			return true;
 		}
 	}

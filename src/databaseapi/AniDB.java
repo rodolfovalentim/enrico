@@ -2,7 +2,7 @@ package databaseapi;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -18,7 +18,8 @@ public class AniDB {
 	private PreparedLink searchQuery;
 	private String infoPage;
 	
-	private static List<java.util.Date> acessList = new ArrayList<java.util.Date>();
+	private static LinkedList<java.util.Date> acessList = new LinkedList<java.util.Date>();
+	
 	
 	public AniDB(){
 		searchQuery = new PreparedLink("http://anidb.net/perl-bin/animedb.pl?type=2&show=animelist&do.search=Search&adb.search=*");

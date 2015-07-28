@@ -11,6 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 import enrico.Anime;
+import enrico.DriverManager;
+import enrico.DriverManager.DriverType;
 import enrico.Episode;
 import enrico.Quality;
 import enricoDAO.AnimeDAO;
@@ -26,8 +28,8 @@ public class PunchSub extends Fansub {
 
 		ArrayList<Episode> episodes = new ArrayList<Episode>();
 
-		WebDriver driver = new PhantomJSDriver();
-		WebDriver iteratorDriver = new PhantomJSDriver();
+		WebDriver driver = DriverManager.getDriver(DriverType.PHANTOMJS);
+		WebDriver iteratorDriver = DriverManager.getDriver(DriverType.PHANTOMJS);
 
 		setAnimeQuality(renameQuality(quality));
 		setAnimePageIndex("1");
@@ -74,11 +76,14 @@ public class PunchSub extends Fansub {
 					}
 					episodes.add(e);
 				}
-				driver.close();
 			}
+			DriverManager.free(driver);
+			DriverManager.free(iteratorDriver);
 			return episodes;
 		} else {
 			System.out.println("Quality not available");
+			DriverManager.free(driver);
+			DriverManager.free(iteratorDriver);
 			return null;
 		}
 	}
@@ -152,7 +157,8 @@ public class PunchSub extends Fansub {
 		AnimeDAO animeDao = new AnimeDAO();
 		animeDao.createTable();
 
-		WebDriver driver = new PhantomJSDriver();
+		WebDriver driver = DriverManager.getDriver();
+		
 		setListPageIndex("1");
 		driver.get(getListPage().toString());
 
@@ -186,9 +192,11 @@ public class PunchSub extends Fansub {
 					a = null;
 				}
 			}
+			DriverManager.free(driver);
 			return animes;
 		} else {
 			System.out.println("Quality not available");
+			DriverManager.free(driver);
 			return null;
 		}
 	}

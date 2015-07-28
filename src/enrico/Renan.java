@@ -3,8 +3,14 @@ package enrico;
 import java.util.ArrayList;
 import java.util.List;
 
-import databaseapi.Hummingbird;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
+import download.DownloadLink;
 import enricoDAO.AnimeDAO;
+import fansubs.Fansub;
+import fansubs.PunchSub;
+
 
 public class Renan {
 
@@ -33,11 +39,95 @@ public class Renan {
 	}
 	
 	public static void main(String[] args) {
+		
+		/*
+		DesiredCapabilities c = DesiredCapabilities.firefox();
+
+		c.setJavascriptEnabled(true);
+
+		WebDriver driver = new HtmlUnitDriver(c);
+		
+		DriverManager.newDriver(driver);
+		DriverManager.free(driver);
+		
 		AnimeDAO dao = new AnimeDAO();
-		for(Anime a : dao.getAll(id))
-		Hummingbird db = new Hummingbird("Berserk");
-		System.out.println(db.getInfoPage());
-		//db.searchSoup();
+		for(Anime a : dao.getAll()){
+			
+			while(true){
+				try{
+					Hummingbird db = new Hummingbird(a.getName());
+					System.out.println(a.getName()+" -- "+db.getTitle());
+					break;
+				}catch(Exception e){
+					System.out.println("ERRO::"+e);
+					DriverManager.free(driver);
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e1) {
+						e1.printStackTrace();
+					}
+				}
+			}
+			
+	
+		}
+		
+		driver = (HtmlUnitDriver)DriverManager.getDriver(DriverType.HTML_UNIT);
+		driver.close();
+		DriverManager.removeAllDrivers();
+		*/
+		AnimeDAO dao = new AnimeDAO();
+		Anime toDownload = dao.getByName("Hajime no Ippo: Rising");
+		System.out.println(toDownload.getFansubtoString());
+		WebDriver driver = new FixedPhantomJSDriver();	
+		DriverManager.newDriver(driver);
+		DriverManager.free(driver);
+		driver = new FixedPhantomJSDriver();
+		DriverManager.newDriver(driver);
+		DriverManager.free(driver);
+		driver = new HtmlUnitDriver();
+		DriverManager.newDriver(driver);
+		DriverManager.free(driver);
+		/*
+		List<Episode> episodes = new ArrayList<Episode>();
+		for (Fansub f : toDownload.getFansubs()){
+			List<Episode> episodes2 = f.getAllEpisodes(Quality.HD);
+			for(Episode e : episodes2){
+				if (episodes.contains(e)){
+					episodes.get(episodes.indexOf(e)).mergeMirrors(e);
+				}else{
+					episodes.add(e);
+				}
+			}
+			System.out.println(f + " : " + f.getClass());
+		}
+		System.out.println(episodes);
+
+		for (Episode e : episodes){
+			for (Mirror m : e.getMirrors()){
+				if (m.download != null){
+					try{
+						System.out.println(m.link);
+						m.download.download("C:\\Users\\renan_000\\Videos\\Animes\\Hajime no Ippo Rising\\");
+						System.out.println("uuheuheue");
+					}catch (Exception exc){
+						System.out.println(exc);
+					}
+				}
+			}
+		}
+		*/
+		
+		DownloadLink dl = DownloadLink.create("http://www.visionshare.com.br/3/VisionFansub-Hajime-no-Ippo-Rising-24-FULLHD.mp4");
+		dl.download("C:\\Users\\renan_000\\Videos\\Animes\\Hajime no Ippo Rising\\");
+		
+		
+		driver = DriverManager.getDriver();
+		driver.close();
+		driver = DriverManager.getDriver();
+		driver.close();
+		driver = DriverManager.getDriver();
+		driver.close();
 	}
 	
 
