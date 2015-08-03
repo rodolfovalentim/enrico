@@ -10,6 +10,8 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 import enrico.Anime;
+import enrico.DriverManager;
+import enrico.DriverManager.DriverType;
 import enrico.Episode;
 import enrico.Mirror;
 import enrico.Quality;
@@ -41,8 +43,8 @@ public class VisionSub extends Fansub {
 	}
 
 	public PreparedLink getAnimePage() {
-		getAnimePage().set(0, getId());
-		getAnimePage().set(1, pagina.toString());
+		animePage.set(0, getId());
+		animePage.set(1, pagina.toString());
 		return animePage;
 	}
 
@@ -144,7 +146,7 @@ public class VisionSub extends Fansub {
 	@Override
 	public List<Episode> getAllEpisodes(Quality quality) {
 		pagina = 0;
-		WebDriver driver = new HtmlUnitDriver();
+		WebDriver driver = DriverManager.getDriver(DriverType.HTML_UNIT);
 
 		List<WebElement> elements;
 		List<Episode> episodes = new ArrayList<Episode>();
@@ -161,7 +163,7 @@ public class VisionSub extends Fansub {
 		for (Episode e : episodes)
 			breakProtector(e, driver);
 
-		driver.close();
+		DriverManager.free(driver);
 		return episodes;
 	}
 
@@ -197,7 +199,7 @@ public class VisionSub extends Fansub {
 	public static List<Anime> getAllAnimes() {
 		ArrayList<Anime> animeList = new ArrayList<Anime>();
 
-		WebDriver driver = new PhantomJSDriver();
+		WebDriver driver = DriverManager.getDriver();
 		int page = 0;
 		List<WebElement> elements = null;
 		do {
@@ -212,7 +214,7 @@ public class VisionSub extends Fansub {
 				page--;
 			}
 		} while (elements.size() > 52);
-		driver.close();
+		DriverManager.free(driver);		
 
 		return animeList;
 	}

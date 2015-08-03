@@ -6,11 +6,15 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import enrico.Anime;
+import enrico.DriverManager;
+import enrico.DriverManager.DriverType;
 import enrico.Episode;
 import enrico.Mirror;
 import enrico.Quality;
@@ -47,12 +51,11 @@ public class AnimaKai extends Fansub {
 
 	private static void getByIndividualEpisode(List<Episode> episodes,
 			Quality quality, WebDriver driver) {
-
+		
 		clickToShowLinks(driver, quality);
-
+		
 		for (WebElement e : driver.findElements(By
 				.cssSelector(".tc_content_item,.tc_title"))) {
-
 			try {
 				String href = e.findElement(By.tagName("a")).getAttribute(
 						"href");
@@ -222,12 +225,12 @@ public class AnimaKai extends Fansub {
 	@Override
 	public List<Episode> getAllEpisodes(Quality quality) {
 		List<Episode> episodes = new ArrayList<Episode>();
-		WebDriver driver = new PhantomJSDriver();
+		WebDriver driver = DriverManager.getDriver(DriverType.PHANTOMJS);
 		driver.get(getAnimePage().toString());
 		getByIndividualEpisode(episodes, quality, driver);
 		for (Episode e : episodes)
 			removeProtectionLinks(e, driver);
-		driver.close();
+		DriverManager.free(driver);
 		return episodes;
 	}
 

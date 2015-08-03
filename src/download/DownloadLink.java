@@ -50,6 +50,8 @@ public abstract class DownloadLink {
 				return new Mega(downLink);
 			case("www.sizedrive.com"):
 				return new File4Go(downLink);
+			case("www.file4go.com"):
+				return new File4Go(downLink);
 			case("uppit.com"):
 				return new UppIt(downLink);
 			case("www.solidfiles.com"):
