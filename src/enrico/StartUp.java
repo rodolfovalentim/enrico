@@ -123,7 +123,7 @@ public class StartUp {
 						password = LinuxCommand.getPasswdForRoot();
 						LinuxCommand.runFromRoot("mv enrico.sh /etc/init.d/", password);
 						LinuxCommand.runFromRoot("chmod 777 /etc/init.d/enrico.sh", password);
-						LinuxCommand.runFromRoot("update-rc.d filename defaults", password);						
+						LinuxCommand.runFromRoot("update-rc.d enrico.sh defaults", password);						
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
