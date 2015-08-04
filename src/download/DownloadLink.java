@@ -36,11 +36,13 @@ public abstract class DownloadLink {
 		URL website = new URL(downloadLink);
 		ReadableByteChannel rbc = Channels.newChannel(website.openStream());
 		FileOutputStream fos = new FileOutputStream(path+fileName);
+		System.out.println("Download started");
 		fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+		System.out.println("Download finished");
 		fos.close();
 	}
 	
-	public abstract void download(String path);
+	public abstract boolean download(String path);
 
 	public static DownloadLink create(String downLink) {
 		switch(downLink.split("/")[2]){

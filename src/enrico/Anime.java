@@ -1,6 +1,8 @@
 package enrico;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import fansubs.*;
 
 public class Anime extends TVShow {
@@ -119,5 +121,18 @@ public class Anime extends TVShow {
 
 	public void mergeFansubs(Anime anime) {
 		this.fansubs.addAll(anime.fansubs);
+	}
+	
+	public void getAllEpisodes(Quality quality){
+		episodes = new ArrayList<Episode>();
+		for (Fansub f : this.getFansubs()){
+			for(Episode e : f.getAllEpisodes(quality)){
+				if (episodes.contains(e)){
+					episodes.get(episodes.indexOf(e)).mergeMirrors(e);
+				}else{
+					episodes.add(e);
+				}
+			}
+		}
 	}
 }

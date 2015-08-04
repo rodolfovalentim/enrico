@@ -1,15 +1,18 @@
 package enrico;
 
+import java.io.File;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-import download.DownloadLink;
+import download.File4Go;
 import enricoDAO.AnimeDAO;
+import fansubs.AnimaKai;
 import fansubs.Fansub;
-import fansubs.PunchSub;
 
 
 public class Renan {
@@ -36,6 +39,22 @@ public class Renan {
 
 		l1.addAll(animes);
 		
+	}
+	
+	public static List<Episode> getEpisodes(String animeName, Quality quality){
+		AnimeDAO dao = new AnimeDAO();
+		List<Episode> episodes = new ArrayList<Episode>();
+		Anime toDownload = dao.getByName(animeName);
+		for (Fansub f : toDownload.getFansubs()){
+			for(Episode e : f.getAllEpisodes(quality)){
+				if (episodes.contains(e)){
+					episodes.get(episodes.indexOf(e)).mergeMirrors(e);
+				}else{
+					episodes.add(e);
+				}
+			}
+		}
+		return episodes;
 	}
 	
 	public static void main(String[] args) {
@@ -76,40 +95,40 @@ public class Renan {
 		driver.close();
 		DriverManager.removeAllDrivers();
 		*/
-		AnimeDAO dao = new AnimeDAO();
-		Anime toDownload = dao.getByName("Hajime no Ippo: Rising");
-		System.out.println(toDownload.getFansubtoString());
+		
+		/*
 		WebDriver driver = new FixedPhantomJSDriver();	
 		DriverManager.newDriver(driver);
 		DriverManager.free(driver);
-		driver = new FixedPhantomJSDriver();
+		driver = new FirefoxDriver();
+		DriverManager.newDriver(driver);
+		DriverManager.free(driver);
+		*/
+		
+		/*driver = new FixedPhantomJSDriver();
 		DriverManager.newDriver(driver);
 		DriverManager.free(driver);
 		driver = new HtmlUnitDriver();
 		DriverManager.newDriver(driver);
 		DriverManager.free(driver);
+		driver = new FirefoxDriver();
+		DriverManager.newDriver(driver);
+		DriverManager.free(driver);
 
+		AnimeDAO dao = new AnimeDAO();
 		List<Episode> episodes = new ArrayList<Episode>();
-		for (Fansub f : toDownload.getFansubs()){
-			List<Episode> episodes2 = f.getAllEpisodes(Quality.HD);
-			for(Episode e : episodes2){
-				if (episodes.contains(e)){
-					episodes.get(episodes.indexOf(e)).mergeMirrors(e);
-				}else{
-					episodes.add(e);
-				}
-			}
-			System.out.println(f + " : " + f.getClass());
-		}
-		System.out.println(episodes);
-
+		Anime toDownload = dao.getByName("Berserk");
+		
+		toDownload.getAllEpisodes(Quality.MP4);
+		episodes = toDownload.getEpisodes();
+		
 		for (Episode e : episodes){
 			for (Mirror m : e.getMirrors()){
 				if (m.download != null){
 					try{
 						System.out.println(m.link);
-						m.download.download("C:\\Users\\renan_000\\Videos\\Animes\\Hajime no Ippo Rising\\");
-						System.out.println("uuheuheue");
+						m.download.download("C:\\Users\\renan_000\\Videos\\Animes\\Test\\");
+						break;
 					}catch (Exception exc){
 						System.out.println(exc);
 					}
@@ -123,7 +142,29 @@ public class Renan {
 		driver.close();
 		driver = DriverManager.getDriver();
 		driver.close();
-	}
+		driver = DriverManager.getDriver();
+		driver.close();
 	
-
+	*/
+		
+	/*
+		AnimaKai ank = new AnimaKai("1177");
+		
+		System.out.println(ank.getAllEpisodes(Quality.MP4));
+		
+		driver = DriverManager.getDriver();
+		driver.close();
+		driver = DriverManager.getDriver();
+		driver.close()
+	*/
+		File f;
+		try {
+			f = new File(Renan.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+			System.out.println(f.getName());
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+	}
 }

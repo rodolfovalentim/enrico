@@ -19,7 +19,7 @@ public class DirectVision extends DownloadLink {
 	}
 
 	@Override
-	public void download(String path) {
+	public boolean download(String path) {
 		WebDriver driver = DriverManager.getDriver(DriverType.PHANTOMJS);
 		driver.get(link);
 		WebDriverWait wait = new WebDriverWait(driver, 15);
@@ -28,8 +28,10 @@ public class DirectVision extends DownloadLink {
 		DriverManager.free(driver);
 		try {
 			download (output, path, URLDecoder.decode(output.split("/")[output.split("/").length-1],"UTF-8"));
+			return true;
 		} catch (IOException e) {
 			e.printStackTrace();
+			return false;
 		}
 	}
 

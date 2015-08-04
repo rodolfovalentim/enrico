@@ -5,7 +5,9 @@ import java.net.URLDecoder;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
+
+import enrico.DriverManager;
+import enrico.DriverManager.DriverType;
 
 public class SolidFiles extends DownloadLink {
 
@@ -15,16 +17,18 @@ public class SolidFiles extends DownloadLink {
 	}
 
 	@Override
-	public void download(String path) {
-		WebDriver driver = new PhantomJSDriver();
+	public boolean download(String path) {
+		WebDriver driver = DriverManager.getDriver(DriverType.PHANTOMJS);
 		driver.get(link);
 		String output = driver.findElement(By.id("ddl-text")).getAttribute("href");
-		driver.close();
+		DriverManager.free(driver);
 		try {
 			download (output, path, URLDecoder.decode(output.split("/")[output.split("/").length-1],"UTF-8"));
+			return true;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 		
 	}

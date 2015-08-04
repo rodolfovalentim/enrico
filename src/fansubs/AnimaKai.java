@@ -71,6 +71,38 @@ public class AnimaKai extends Fansub {
 			}
 		}
 	}
+	
+	private void getByServer(List<Episode> episodes, Quality quality, WebDriver driver) {
+		if (driver.findElements(By.id("serie_pg_tabs_item_1")).size()<=0)
+			return;
+		
+		driver.findElement(By.id("serie_pg_tabs_item_1")).click();
+		if (quality.equals(Quality.MP4)&&(driver.findElements(By.id("spge_quality_tabs_mq")).size()>0)){
+			driver.findElement(By.id("spge_quality_tabs_mq")).click();
+		}else if(quality.equals(Quality.HD)&&(driver.findElements(By.id("spge_quality_tabs_bd")).size()>0)){
+			driver.findElement(By.id("spge_quality_tabs_bd")).click();
+		}else{
+			return;
+		}
+		
+		while(driver.findElement(By.id("serie_epby_link_loader")).isDisplayed());
+		
+		for (WebElement e : driver.findElements(By.className("serie_epby_link_content"))){
+			if (!e.isDisplayed())
+				continue;
+			for (WebElement elem : e.findElements(By.className("serie_epby_link_item"))){
+				elem = elem.findElement(By.tagName("a"));
+				Episode ep = new Episode("",Integer.valueOf(elem.getText().split(" ")[1]),quality.toString());
+				ep.addMirror("Unknown", elem.getAttribute("href"));
+				if (episodes.contains(ep)){
+					episodes.get(episodes.indexOf(ep)).mergeMirrors(ep);
+				}else{
+					episodes.add(ep);
+				}
+			}
+		}
+		
+	}
 
 	private static Episode getLastEpisode(WebDriver driver, Quality quality) {
 		clickToShowLinks(driver, quality);
@@ -214,11 +246,11 @@ public class AnimaKai extends Fansub {
 
 	@Override
 	public Episode getLastEpisode(Quality quality) {
-		WebDriver driver = new PhantomJSDriver();
+		WebDriver driver = DriverManager.getDriver(DriverType.PHANTOMJS);
 		driver.get(getAnimePage().toString());
 		Episode ep = getLastEpisode(driver, quality);
 		removeProtectionLinks(ep, driver);
-		driver.close();
+		DriverManager.free(driver);
 		return ep;
 	}
 
@@ -228,6 +260,7 @@ public class AnimaKai extends Fansub {
 		WebDriver driver = DriverManager.getDriver(DriverType.PHANTOMJS);
 		driver.get(getAnimePage().toString());
 		getByIndividualEpisode(episodes, quality, driver);
+		getByServer(episodes,quality,driver);
 		for (Episode e : episodes)
 			removeProtectionLinks(e, driver);
 		DriverManager.free(driver);
@@ -236,17 +269,17 @@ public class AnimaKai extends Fansub {
 
 	@Override
 	public Episode getEpisode(int number, Quality quality) {
-		WebDriver driver = new PhantomJSDriver();
+		WebDriver driver = DriverManager.getDriver(DriverType.PHANTOMJS);
 		driver.get(getAnimePage().toString());
 		Episode ep = getSpecificEpisode(driver, quality, number);
 		removeProtectionLinks(ep, driver);
-		driver.close();
+		DriverManager.free(driver);
 		return ep;
 	}
 
 	public static List<Anime> getAllAnimes() {
 		ArrayList<Anime> animeList = new ArrayList<Anime>();
-		WebDriver driver = new PhantomJSDriver();
+		WebDriver driver = DriverManager.getDriver(DriverType.PHANTOMJS);
 		int page = 1;
 		List<WebElement> elements = null;
 		do {
@@ -259,7 +292,7 @@ public class AnimaKai extends Fansub {
 				page--;
 			}
 		} while (elements.size() > 0);
-		driver.close();
+		DriverManager.free(driver);
 		return animeList;
 	}
 

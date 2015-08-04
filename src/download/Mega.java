@@ -21,15 +21,17 @@ public class Mega extends DownloadLink {
 	}
 
 	@Override
-	public void download(String path) {
+	public boolean download(String path) {
 		MegaHandler mh = new MegaHandler("00@gmail.com","1234");
 		try {
 			mh.download(link, path);
+			return true;
 		} catch (InvalidKeyException | NoSuchPaddingException | InvalidAlgorithmParameterException
 				| NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | IOException
 				| JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
 	}
 

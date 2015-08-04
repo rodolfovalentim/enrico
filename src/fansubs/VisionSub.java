@@ -119,7 +119,7 @@ public class VisionSub extends Fansub {
 	@Override
 	public Episode getLastEpisode(Quality quality) {
 		pagina = 0;
-		WebDriver driver = new HtmlUnitDriver();
+		WebDriver driver = DriverManager.getDriver(DriverType.HTML_UNIT);
 
 		List<WebElement> elements;
 
@@ -139,7 +139,7 @@ public class VisionSub extends Fansub {
 
 		breakProtector(episode, driver);
 
-		driver.close();
+		DriverManager.free(driver);
 		return episode;
 	}
 
@@ -170,7 +170,7 @@ public class VisionSub extends Fansub {
 	@Override
 	public Episode getEpisode(int number, Quality quality) {
 		pagina = 0;
-		WebDriver driver = new HtmlUnitDriver();
+		WebDriver driver = DriverManager.getDriver(DriverType.HTML_UNIT);
 
 		List<WebElement> elements;
 		Episode episode = null;
@@ -192,14 +192,14 @@ public class VisionSub extends Fansub {
 		if (episode != null)
 			breakProtector(episode, driver);
 
-		driver.close();
+		DriverManager.free(driver);
 		return episode;
 	}
 
 	public static List<Anime> getAllAnimes() {
 		ArrayList<Anime> animeList = new ArrayList<Anime>();
 
-		WebDriver driver = DriverManager.getDriver();
+		WebDriver driver = DriverManager.getDriver(DriverType.HTML_UNIT);
 		int page = 0;
 		List<WebElement> elements = null;
 		do {

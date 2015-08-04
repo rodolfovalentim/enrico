@@ -90,8 +90,8 @@ public class PunchSub extends Fansub {
 
 	@Override
 	public Episode getLastEpisode(Quality quality) {
-		WebDriver driver = new PhantomJSDriver();
-		WebDriver iteratorDriver = new PhantomJSDriver();
+		WebDriver driver = DriverManager.getDriver(DriverType.PHANTOMJS);
+		WebDriver iteratorDriver = DriverManager.getDriver(DriverType.PHANTOMJS);
 
 		setAnimeQuality(renameQuality(quality));
 		setAnimePageIndex("1");
@@ -132,9 +132,13 @@ public class PunchSub extends Fansub {
 							PunchSub.getWithoutWait(iteratorDriver, link));
 				}
 			}
+			DriverManager.free(driver);
+			DriverManager.free(iteratorDriver);
 			return e;
 		} else {
 			System.out.println("Quality not available");
+			DriverManager.free(driver);
+			DriverManager.free(iteratorDriver);
 			return null;
 		}
 	}
@@ -157,7 +161,7 @@ public class PunchSub extends Fansub {
 		AnimeDAO animeDao = new AnimeDAO();
 		animeDao.createTable();
 
-		WebDriver driver = DriverManager.getDriver();
+		WebDriver driver = DriverManager.getDriver(DriverType.PHANTOMJS);
 		
 		setListPageIndex("1");
 		driver.get(getListPage().toString());
